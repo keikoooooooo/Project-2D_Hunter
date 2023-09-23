@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87c61d493c8c6fb4db2ac5dafcfa22e5, type: 3}
+  m_Name: Stats_SO
+  m_EditorClassIdentifier: 
+  MaxHealth: 140
+  Damage: 20
+  MoveSpeed: 3.8
+  AttackCooldown: 0
+  RangeAttack: 2
+  Armor: 0
+  SpecialMultiple: 1
+  ProactiveAbility:
+  - {fileID: 11400000, guid: 88a71c426e1be2648b50fafdcb1602d0, type: 2}
+  - {fileID: 11400000, guid: e8fc44b6893b153478815b80b11864ec, type: 2}
+  - {fileID: 11400000, guid: 959bd322d0f89a44abf5aff8f7741567, type: 2}
+  - {fileID: 11400000, guid: 81bc2ce88986e4b46a0a22b4065d5d6d, type: 2}
+  - {fileID: 11400000, guid: ba99eff15de36cb4aa9a11baa55bad98, type: 2}
+  - {fileID: 11400000, guid: 368a39b4f4c8bcc42890506839c8dbfe, type: 2}
+  - {fileID: 11400000, guid: 2efad8bfd48db974fbd93f28c69a33f2, type: 2}
+  - {fileID: 11400000, guid: 1a31a2717cf07904a9185c834f84855b, type: 2}
+  - {fileID: 11400000, guid: 7eaa73056ea83c34da829d677ff3890a, type: 2}
+  Information:
+    isUnlock: 1
+    CharacterName: Corrupted Knight
+    CharacterInformation: Information?
+    LastAbilitiesUsed1: 
+    LastAbilitiesUsed2: 
+    AbilitiesPoint:
+    - AbiName: Health
+      IsUnlock: 0
+    - AbiName: Movement Speed
+      IsUnlock: 0
+    - AbiName: Attack Speed
+      IsUnlock: 0
+    - AbiName: Damage
+      IsUnlock: 0
+    - AbiName: More XP
+      IsUnlock: 0
+    - AbiName: Regen
+      IsUnlock: 0
+    - AbiName: Celestial Pact
+      IsUnlock: 0
+    - AbiName: Armor
+      IsUnlock: 0
+    - AbiName: Dodge Chance
+      IsUnlock: 0
+    TotalSkin: 3
+    Skins:
+    - Sprite: {fileID: 21300000, guid: b25e9a8e92d19224c8255e907b3797df, type: 3}
+      Price: 0
+    - Sprite: {fileID: 21300000, guid: a0b971a73212202489b0ea3ee8557646, type: 3}
+      Price: 150
+    - Sprite: {fileID: 21300000, guid: c2d859d333244ce4ab34c8f699d60467, type: 3}
+      Price: 250
+    CurrentSkin: 1
+    Level: 1
+    CurrentUpgradePoint: 5
+    MaxUpgradePoint: 5
+    UpgradePrice: 50
+    Rarity: 0

@@ -1,0 +1,13 @@
+
+CircleAnimatedClick.png
+size: 244,244
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+circle
+  rotate: false
+  xy: 2, 2
+  size: 237, 237
+  orig: 256, 256
+  offset: 9, 10
+  index: -1

@@ -1,0 +1,111 @@
+{
+"skeleton": {
+	"hash": "JriiHAb/zkh2y7SQksN1bJAi48M",
+	"spine": "3.8.99",
+	"x": -128,
+	"y": -128,
+	"width": 256,
+	"height": 256,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "Circle_15", "parent": "root" },
+	{ "name": "Circle_5", "parent": "root" },
+	{ "name": "Circle_6", "parent": "root" },
+	{ "name": "Circle_7", "parent": "root" }
+],
+"slots": [
+	{ "name": "Circle_15", "bone": "Circle_15", "attachment": "Circle_15", "blend": "additive" },
+	{ "name": "Circle_5", "bone": "Circle_5", "attachment": "Circle_5", "blend": "screen" },
+	{ "name": "Circle_7", "bone": "Circle_7", "attachment": "Circle_5", "blend": "screen" },
+	{ "name": "Circle_6", "bone": "Circle_6", "attachment": "Circle_5", "blend": "screen" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Circle_5": {
+				"Circle_5": { "scaleX": 0.5, "scaleY": 0.5, "width": 512, "height": 512 }
+			},
+			"Circle_6": {
+				"Circle_5": { "scaleX": 0.5, "scaleY": 0.5, "width": 512, "height": 512 }
+			},
+			"Circle_7": {
+				"Circle_5": { "scaleX": 0.5, "scaleY": 0.5, "width": 512, "height": 512 }
+			},
+			"Circle_15": {
+				"Circle_15": { "scaleX": 0.5, "scaleY": 0.5, "width": 512, "height": 512 }
+			}
+		}
+	}
+],
+"events": {
+	"Spawn": {}
+},
+"animations": {
+	"anim_in": {
+		"slots": {
+			"Circle_5": {
+				"color": [
+					{ "color": "ffffffff", "curve": 0.25, "c3": 0.75 },
+					{ "time": 2, "color": "ffffff00" }
+				]
+			},
+			"Circle_6": {
+				"color": [
+					{ "color": "ffffff7c", "curve": 0.376, "c2": 0.5, "c3": 0.749 },
+					{ "time": 0.9667, "color": "ffffff00" }
+				]
+			},
+			"Circle_7": {
+				"color": [
+					{ "time": 1, "color": "ffffffff", "curve": 0.25, "c3": 0.75 },
+					{ "time": 3, "color": "ffffff00" }
+				]
+			},
+			"Circle_15": {
+				"color": [
+					{ "color": "ffffffff", "curve": 0.25, "c3": 0.75 },
+					{ "time": 2, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"Circle_15": {
+				"rotate": [
+					{},
+					{ "time": 1, "angle": -45 },
+					{ "time": 2, "angle": -90 }
+				]
+			},
+			"Circle_5": {
+				"scale": [
+					{ "x": 0.01, "y": 0.01, "curve": 0.25, "c3": 0.75 },
+					{ "time": 2, "x": 1.79, "y": 1.79 }
+				]
+			},
+			"Circle_6": {
+				"scale": [
+					{ "x": 0.92, "y": 0.92, "curve": 0.376, "c2": 0.5, "c3": 0.749 },
+					{ "time": 0.9667, "x": 1.79, "y": 1.79 }
+				]
+			},
+			"Circle_7": {
+				"scale": [
+					{ "x": 0.01, "y": 0.01, "curve": "stepped" },
+					{ "time": 1, "x": 0.01, "y": 0.01, "curve": 0.25, "c3": 0.75 },
+					{ "time": 3, "x": 1.79, "y": 1.79 }
+				]
+			},
+			"root": {
+				"scale": [
+					{ "x": 0.01, "y": 0.01, "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.6667 }
+				]
+			}
+		}
+	}
+}
+}

@@ -1,0 +1,83 @@
+
+Slime.png
+size: 540,192
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ANGEL WING 1
+  rotate: false
+  xy: 285, 4
+  size: 98, 57
+  orig: 99, 58
+  offset: 1, 1
+  index: -1
+ANGEL WING 2
+  rotate: false
+  xy: 385, 13
+  size: 76, 57
+  orig: 76, 57
+  offset: 0, 0
+  index: -1
+BIRD WING 1
+  rotate: true
+  xy: 373, 72
+  size: 117, 77
+  orig: 118, 77
+  offset: 0, 0
+  index: -1
+BIRD WING 2
+  rotate: true
+  xy: 452, 100
+  size: 89, 77
+  orig: 89, 78
+  offset: 0, 1
+  index: -1
+BODY
+  rotate: false
+  xy: 2, 15
+  size: 227, 174
+  orig: 227, 174
+  offset: 0, 0
+  index: -1
+DEMON WING 1
+  rotate: true
+  xy: 302, 64
+  size: 125, 69
+  orig: 125, 70
+  offset: 0, 1
+  index: -1
+DEMON WING 2
+  rotate: true
+  xy: 463, 11
+  size: 87, 72
+  orig: 87, 72
+  offset: 0, 0
+  index: -1
+EYES
+  rotate: true
+  xy: 231, 62
+  size: 127, 42
+  orig: 129, 44
+  offset: 1, 1
+  index: -1
+EYES CLOSED
+  rotate: true
+  xy: 275, 63
+  size: 126, 25
+  orig: 129, 27
+  offset: 2, 1
+  index: -1
+MOUTH
+  rotate: false
+  xy: 2, 2
+  size: 38, 11
+  orig: 40, 13
+  offset: 1, 1
+  index: -1
+shadow
+  rotate: true
+  xy: 231, 2
+  size: 58, 52
+  orig: 64, 64
+  offset: 3, 6
+  index: -1

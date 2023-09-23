@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87c61d493c8c6fb4db2ac5dafcfa22e5, type: 3}
+  m_Name: Stats_SO
+  m_EditorClassIdentifier: 
+  MaxHealth: 90
+  Damage: 28
+  MoveSpeed: 4.35
+  AttackCooldown: 3
+  RangeAttack: 2
+  Armor: 0
+  SpecialMultiple: 1
+  ProactiveAbility:
+  - {fileID: 11400000, guid: 88a71c426e1be2648b50fafdcb1602d0, type: 2}
+  - {fileID: 11400000, guid: e8fc44b6893b153478815b80b11864ec, type: 2}
+  - {fileID: 11400000, guid: 959bd322d0f89a44abf5aff8f7741567, type: 2}
+  - {fileID: 11400000, guid: 81bc2ce88986e4b46a0a22b4065d5d6d, type: 2}
+  - {fileID: 11400000, guid: ba99eff15de36cb4aa9a11baa55bad98, type: 2}
+  - {fileID: 11400000, guid: a4e8d0fcb5edf584ea316656ae2827a5, type: 2}
+  - {fileID: 11400000, guid: 84d95cdecd64c674fbd35837dfceb622, type: 2}
+  - {fileID: 11400000, guid: 0d612da41454acc45ab2278306fea906, type: 2}
+  Information:
+    isUnlock: 1
+    CharacterName: Shadow
+    CharacterInformation: Information?
+    LastAbilitiesUsed1: 
+    LastAbilitiesUsed2: 
+    AbilitiesPoint:
+    - AbiName: Health
+      IsUnlock: 0
+    - AbiName: Movement Speed
+      IsUnlock: 0
+    - AbiName: Attack Speed
+      IsUnlock: 0
+    - AbiName: Damage
+      IsUnlock: 0
+    - AbiName: More XP
+      IsUnlock: 0
+    - AbiName: Demon Pact
+      IsUnlock: 0
+    - AbiName: Death Strike
+      IsUnlock: 0
+    - AbiName: Life Steal
+      IsUnlock: 0
+    TotalSkin: 5
+    Skins:
+    - Sprite: {fileID: 21300000, guid: 29c6ae5f40d56b9429808e8bea65d5bd, type: 3}
+      Price: 0
+    - Sprite: {fileID: 21300000, guid: 852c2dc2cfde2c34d9ce256a51438e90, type: 3}
+      Price: 150
+    - Sprite: {fileID: 21300000, guid: 901532c084d8d224c8a80dd4ce9f7a05, type: 3}
+      Price: 150
+    - Sprite: {fileID: 21300000, guid: c13d510de5ebb5d4c8931bee506d1636, type: 3}
+      Price: 150
+    - Sprite: {fileID: 21300000, guid: 708708610597b9e49ac1510d54f7a561, type: 3}
+      Price: 150
+    CurrentSkin: 1
+    Level: 1
+    CurrentUpgradePoint: 0
+    MaxUpgradePoint: 5
+    UpgradePrice: 50
+    Rarity: 1

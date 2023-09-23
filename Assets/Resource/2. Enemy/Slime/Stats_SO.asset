@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34240bf94ffb57644a829817314a8901, type: 3}
+  m_Name: Stats_SO
+  m_EditorClassIdentifier: 
+  AnimatorController: {fileID: 22100000, guid: 7fb812a5476bb334e8266dc237e1924e, type: 2}
+  MaxHealth: 45
+  Damage: 7
+  MoveSpeed: 2.7
+  AttackCooldown: 2
+  RangeAttack: 020000000200000002000000
+  Information:
+    EnemyName: Slime
+    Sprite: {fileID: 21300000, guid: 5c0fef04cafb55a4e96492cc60e2eec6, type: 3}

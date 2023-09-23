@@ -1,0 +1,271 @@
+
+Ghost.png
+size: 1964,1956
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2ARM 1
+  rotate: false
+  xy: 1310, 2
+  size: 180, 240
+  orig: 180, 240
+  offset: 0, 0
+  index: -1
+2ARM 2
+  rotate: false
+  xy: 1637, 2
+  size: 140, 188
+  orig: 140, 188
+  offset: 0, 0
+  index: -1
+2BODY
+  rotate: false
+  xy: 2, 490
+  size: 252, 220
+  orig: 252, 220
+  offset: 0, 0
+  index: -1
+3BODY
+  rotate: false
+  xy: 2, 490
+  size: 252, 220
+  orig: 252, 220
+  offset: 0, 0
+  index: -1
+2HEAD
+  rotate: false
+  xy: 329, 490
+  size: 296, 300
+  orig: 296, 300
+  offset: 0, 0
+  index: -1
+2SCYTHE
+  rotate: false
+  xy: 656, 490
+  size: 325, 471
+  orig: 444, 472
+  offset: 2, 0
+  index: -1
+3ARM 1
+  rotate: false
+  xy: 983, 490
+  size: 180, 240
+  orig: 180, 240
+  offset: 0, 0
+  index: -1
+3ARM 2
+  rotate: false
+  xy: 1310, 490
+  size: 140, 188
+  orig: 140, 188
+  offset: 0, 0
+  index: -1
+3DAGGER
+  rotate: false
+  xy: 1637, 490
+  size: 106, 486
+  orig: 108, 488
+  offset: 1, 1
+  index: -1
+3HEAD
+  rotate: false
+  xy: 2, 978
+  size: 296, 300
+  orig: 296, 300
+  offset: 0, 0
+  index: -1
+ARM 1
+  rotate: false
+  xy: 2, 2
+  size: 180, 240
+  orig: 180, 240
+  offset: 0, 0
+  index: -1
+ARM 2
+  rotate: false
+  xy: 329, 2
+  size: 140, 188
+  orig: 140, 188
+  offset: 0, 0
+  index: -1
+BODY
+  rotate: false
+  xy: 656, 2
+  size: 252, 220
+  orig: 252, 220
+  offset: 0, 0
+  index: -1
+EYE CLOSE 2
+  rotate: false
+  xy: 329, 978
+  size: 141, 96
+  orig: 144, 96
+  offset: 1, 0
+  index: -1
+FX/Fx1_1
+  rotate: false
+  xy: 656, 978
+  size: 125, 102
+  orig: 200, 200
+  offset: 11, 96
+  index: -1
+FX/Fx1_2
+  rotate: false
+  xy: 656, 978
+  size: 125, 102
+  orig: 200, 200
+  offset: 11, 96
+  index: -1
+FX/Fx1_10
+  rotate: false
+  xy: 983, 1466
+  size: 135, 194
+  orig: 200, 200
+  offset: 41, 2
+  index: -1
+FX/Fx1_11
+  rotate: false
+  xy: 1310, 1466
+  size: 137, 193
+  orig: 200, 200
+  offset: 40, 2
+  index: -1
+FX/Fx1_12
+  rotate: false
+  xy: 1310, 1466
+  size: 137, 193
+  orig: 200, 200
+  offset: 40, 2
+  index: -1
+FX/Fx1_13
+  rotate: false
+  xy: 1637, 1466
+  size: 138, 191
+  orig: 200, 200
+  offset: 40, 2
+  index: -1
+FX/Fx1_3
+  rotate: false
+  xy: 983, 978
+  size: 145, 186
+  orig: 200, 200
+  offset: 15, 12
+  index: -1
+FX/Fx1_4
+  rotate: false
+  xy: 1310, 978
+  size: 156, 196
+  orig: 200, 200
+  offset: 17, 2
+  index: -1
+FX/Fx1_5
+  rotate: false
+  xy: 1637, 978
+  size: 153, 196
+  orig: 200, 200
+  offset: 20, 2
+  index: -1
+FX/Fx1_6
+  rotate: false
+  xy: 2, 1466
+  size: 151, 196
+  orig: 200, 200
+  offset: 23, 2
+  index: -1
+FX/Fx1_7
+  rotate: false
+  xy: 2, 1466
+  size: 151, 196
+  orig: 200, 200
+  offset: 23, 2
+  index: -1
+FX/Fx1_8
+  rotate: false
+  xy: 329, 1466
+  size: 149, 196
+  orig: 200, 200
+  offset: 26, 2
+  index: -1
+FX/Fx1_9
+  rotate: false
+  xy: 656, 1466
+  size: 152, 196
+  orig: 200, 200
+  offset: 24, 2
+  index: -1
+HEAD
+  rotate: false
+  xy: 983, 2
+  size: 296, 300
+  orig: 296, 300
+  offset: 0, 0
+  index: -1
+
+Ghost2.png
+size: 1964,980
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FX/Fx1_14
+  rotate: false
+  xy: 2, 2
+  size: 138, 190
+  orig: 200, 200
+  offset: 40, 2
+  index: -1
+FX/Fx1_15
+  rotate: false
+  xy: 329, 2
+  size: 135, 140
+  orig: 200, 200
+  offset: 42, 2
+  index: -1
+FX/Fx1_16
+  rotate: false
+  xy: 656, 2
+  size: 96, 135
+  orig: 200, 200
+  offset: 78, 2
+  index: -1
+FX/Fx1_17
+  rotate: false
+  xy: 656, 2
+  size: 96, 135
+  orig: 200, 200
+  offset: 78, 2
+  index: -1
+FX/Fx1_18
+  rotate: false
+  xy: 983, 2
+  size: 89, 129
+  orig: 200, 200
+  offset: 83, 2
+  index: -1
+FX/Fx1_19
+  rotate: false
+  xy: 1310, 2
+  size: 81, 79
+  orig: 200, 200
+  offset: 90, 2
+  index: -1
+FX/Fx1_20
+  rotate: false
+  xy: 1637, 2
+  size: 81, 79
+  orig: 200, 200
+  offset: 90, 2
+  index: -1
+STAFF
+  rotate: false
+  xy: 2, 490
+  size: 109, 402
+  orig: 112, 404
+  offset: 1, 1
+  index: -1
+shadow
+  rotate: false
+  xy: 329, 490
+  size: 64, 56
+  orig: 64, 64
+  offset: 0, 4
+  index: -1

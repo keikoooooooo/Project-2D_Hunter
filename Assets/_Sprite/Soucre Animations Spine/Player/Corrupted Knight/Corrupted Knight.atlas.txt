@@ -1,0 +1,433 @@
+
+Corrupted Knight.png
+size: 1000,1032
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2ARM A1
+  rotate: true
+  xy: 331, 15
+  size: 115, 144
+  orig: 117, 146
+  offset: 1, 1
+  index: -1
+2ARM B1
+  rotate: true
+  xy: 2, 149
+  size: 123, 132
+  orig: 125, 134
+  offset: 1, 1
+  index: -1
+2ARM B2
+  rotate: true
+  xy: 923, 134
+  size: 65, 75
+  orig: 67, 77
+  offset: 1, 1
+  index: -1
+2BODY
+  rotate: true
+  xy: 817, 566
+  size: 155, 173
+  orig: 157, 175
+  offset: 1, 1
+  index: -1
+2HAND B
+  rotate: false
+  xy: 2, 716
+  size: 269, 188
+  orig: 271, 190
+  offset: 1, 1
+  index: -1
+2HEAD
+  rotate: true
+  xy: 200, 391
+  size: 80, 91
+  orig: 82, 93
+  offset: 1, 1
+  index: -1
+2HEAD EYES
+  rotate: true
+  xy: 273, 815
+  size: 28, 12
+  orig: 30, 14
+  offset: 1, 1
+  index: -1
+2HEAD EYES CLOSED
+  rotate: false
+  xy: 273, 894
+  size: 23, 10
+  orig: 25, 12
+  offset: 1, 1
+  index: -1
+2HIP
+  rotate: false
+  xy: 661, 209
+  size: 88, 101
+  orig: 90, 103
+  offset: 1, 1
+  index: -1
+2LEG 1
+  rotate: true
+  xy: 841, 143
+  size: 78, 80
+  orig: 80, 82
+  offset: 1, 1
+  index: -1
+2LEG 2
+  rotate: true
+  xy: 505, 776
+  size: 60, 70
+  orig: 62, 72
+  offset: 1, 1
+  index: -1
+2LEG 3
+  rotate: true
+  xy: 775, 669
+  size: 60, 40
+  orig: 62, 42
+  offset: 1, 1
+  index: -1
+2SHIELD
+  rotate: false
+  xy: 298, 708
+  size: 205, 190
+  orig: 207, 192
+  offset: 1, 1
+  index: -1
+3ARM A1
+  rotate: true
+  xy: 331, 132
+  size: 124, 153
+  orig: 126, 155
+  offset: 1, 1
+  index: -1
+3ARM B1
+  rotate: true
+  xy: 850, 278
+  size: 131, 143
+  orig: 133, 145
+  offset: 1, 1
+  index: -1
+3ARM B2
+  rotate: true
+  xy: 496, 524
+  size: 66, 75
+  orig: 68, 77
+  offset: 1, 1
+  index: -1
+3BODY
+  rotate: true
+  xy: 819, 723
+  size: 171, 173
+  orig: 173, 175
+  offset: 1, 1
+  index: -1
+3HAND B
+  rotate: false
+  xy: 302, 900
+  size: 274, 130
+  orig: 276, 132
+  offset: 1, 1
+  index: -1
+3HEAD
+  rotate: true
+  xy: 200, 473
+  size: 104, 91
+  orig: 106, 93
+  offset: 1, 1
+  index: -1
+3HEAD EYES
+  rotate: false
+  xy: 273, 845
+  size: 22, 14
+  orig: 24, 16
+  offset: 1, 1
+  index: -1
+3HEAD EYES CLOSED
+  rotate: true
+  xy: 287, 831
+  size: 12, 9
+  orig: 14, 11
+  offset: 1, 1
+  index: -1
+3HIP
+  rotate: false
+  xy: 751, 209
+  size: 88, 101
+  orig: 90, 103
+  offset: 1, 1
+  index: -1
+3HIP CLOTH
+  rotate: true
+  xy: 841, 223
+  size: 53, 86
+  orig: 55, 88
+  offset: 1, 1
+  index: -1
+3LEG 1
+  rotate: true
+  xy: 813, 64
+  size: 77, 80
+  orig: 79, 82
+  offset: 1, 1
+  index: -1
+3LEG 2
+  rotate: true
+  xy: 505, 714
+  size: 60, 70
+  orig: 62, 72
+  offset: 1, 1
+  index: -1
+3LEG 3
+  rotate: true
+  xy: 775, 607
+  size: 60, 40
+  orig: 62, 42
+  offset: 1, 1
+  index: -1
+3SHIELD
+  rotate: false
+  xy: 577, 609
+  size: 196, 182
+  orig: 198, 184
+  offset: 1, 1
+  index: -1
+ARM A1
+  rotate: false
+  xy: 633, 24
+  size: 129, 183
+  orig: 131, 185
+  offset: 1, 1
+  index: -1
+ARM B1
+  rotate: true
+  xy: 819, 896
+  size: 134, 178
+  orig: 136, 180
+  offset: 1, 1
+  index: -1
+ARM B2
+  rotate: false
+  xy: 929, 201
+  size: 65, 75
+  orig: 67, 77
+  offset: 1, 1
+  index: -1
+BODY
+  rotate: true
+  xy: 293, 398
+  size: 155, 195
+  orig: 157, 197
+  offset: 1, 1
+  index: -1
+BODY CAPE
+  rotate: true
+  xy: 505, 592
+  size: 120, 67
+  orig: 122, 69
+  offset: 1, 1
+  index: -1
+FX/Fx1_1
+  rotate: false
+  xy: 486, 15
+  size: 145, 186
+  orig: 200, 200
+  offset: 15, 12
+  index: -1
+FX/Fx1_11
+  rotate: true
+  xy: 293, 258
+  size: 138, 191
+  orig: 200, 200
+  offset: 40, 2
+  index: -1
+FX/Fx1_12
+  rotate: true
+  xy: 139, 4
+  size: 138, 190
+  orig: 200, 200
+  offset: 40, 2
+  index: -1
+FX/Fx1_13
+  rotate: false
+  xy: 2, 2
+  size: 135, 140
+  orig: 200, 200
+  offset: 42, 2
+  index: -1
+FX/Fx1_14
+  rotate: false
+  xy: 200, 579
+  size: 96, 135
+  orig: 200, 200
+  offset: 78, 2
+  index: -1
+FX/Fx1_15
+  rotate: false
+  xy: 200, 579
+  size: 96, 135
+  orig: 200, 200
+  offset: 78, 2
+  index: -1
+FX/Fx1_16
+  rotate: false
+  xy: 198, 144
+  size: 89, 129
+  orig: 200, 200
+  offset: 83, 2
+  index: -1
+FX/Fx1_17
+  rotate: false
+  xy: 490, 443
+  size: 81, 79
+  orig: 200, 200
+  offset: 90, 2
+  index: -1
+FX/Fx1_18
+  rotate: false
+  xy: 490, 362
+  size: 81, 79
+  orig: 200, 200
+  offset: 90, 2
+  index: -1
+FX/Fx1_2
+  rotate: true
+  xy: 574, 451
+  size: 156, 196
+  orig: 200, 200
+  offset: 17, 2
+  index: -1
+FX/Fx1_3
+  rotate: true
+  xy: 772, 411
+  size: 153, 196
+  orig: 200, 200
+  offset: 20, 2
+  index: -1
+FX/Fx1_4
+  rotate: true
+  xy: 298, 555
+  size: 151, 196
+  orig: 200, 200
+  offset: 23, 2
+  index: -1
+FX/Fx1_5
+  rotate: true
+  xy: 298, 555
+  size: 151, 196
+  orig: 200, 200
+  offset: 23, 2
+  index: -1
+FX/Fx1_6
+  rotate: true
+  xy: 2, 411
+  size: 149, 196
+  orig: 200, 200
+  offset: 26, 2
+  index: -1
+FX/Fx1_7
+  rotate: true
+  xy: 2, 562
+  size: 152, 196
+  orig: 200, 200
+  offset: 24, 2
+  index: -1
+FX/Fx1_8
+  rotate: true
+  xy: 2, 274
+  size: 135, 194
+  orig: 200, 200
+  offset: 41, 2
+  index: -1
+FX/Fx1_9
+  rotate: true
+  xy: 573, 312
+  size: 137, 193
+  orig: 200, 200
+  offset: 40, 2
+  index: -1
+FX/Fx1_10
+  rotate: true
+  xy: 573, 312
+  size: 137, 193
+  orig: 200, 200
+  offset: 40, 2
+  index: -1
+HAND B
+  rotate: false
+  xy: 2, 906
+  size: 298, 124
+  orig: 300, 126
+  offset: 1, 1
+  index: -1
+HEAD
+  rotate: false
+  xy: 198, 275
+  size: 90, 114
+  orig: 92, 116
+  offset: 1, 1
+  index: -1
+HEAD EYES
+  rotate: true
+  xy: 764, 127
+  size: 80, 47
+  orig: 82, 49
+  offset: 1, 1
+  index: -1
+HEAD EYES ACC
+  rotate: false
+  xy: 273, 861
+  size: 22, 31
+  orig: 24, 33
+  offset: 1, 1
+  index: -1
+HIP
+  rotate: false
+  xy: 571, 209
+  size: 88, 101
+  orig: 90, 103
+  offset: 1, 1
+  index: -1
+LEG 1
+  rotate: true
+  xy: 768, 312
+  size: 97, 80
+  orig: 99, 82
+  offset: 1, 1
+  index: -1
+LEG 2
+  rotate: true
+  xy: 505, 838
+  size: 60, 70
+  orig: 62, 72
+  offset: 1, 1
+  index: -1
+LEG 3
+  rotate: true
+  xy: 775, 731
+  size: 60, 40
+  orig: 62, 42
+  offset: 1, 1
+  index: -1
+SHIELD
+  rotate: true
+  xy: 578, 793
+  size: 237, 239
+  orig: 239, 241
+  offset: 1, 1
+  index: -1
+SHIELD EYES
+  rotate: true
+  xy: 486, 203
+  size: 157, 83
+  orig: 159, 85
+  offset: 1, 1
+  index: -1
+shadow
+  rotate: true
+  xy: 139, 208
+  size: 64, 56
+  orig: 64, 64
+  offset: 0, 4
+  index: -1

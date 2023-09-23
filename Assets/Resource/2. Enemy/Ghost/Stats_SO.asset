@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34240bf94ffb57644a829817314a8901, type: 3}
+  m_Name: Stats_SO
+  m_EditorClassIdentifier: 
+  AnimatorController: {fileID: 22100000, guid: 24ba4a603fbd4f94aa4784e2838ede0f, type: 2}
+  MaxHealth: 50
+  Damage: 10
+  MoveSpeed: 3.5
+  AttackCooldown: 2
+  RangeAttack: 060000000400000004000000
+  Information:
+    EnemyName: Ghost
+    Sprite: {fileID: 21300000, guid: 37477791a0b683d40b0806d49be61876, type: 3}

@@ -1,0 +1,90 @@
+
+skeleton.png
+size: 1564,132
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Deco_Trumpet
+  rotate: false
+  xy: 2, 2
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+Rainbow_1
+  rotate: false
+  xy: 132, 2
+  size: 38, 56
+  orig: 40, 56
+  offset: 1, 0
+  index: -1
+Rainbow_10
+  rotate: false
+  xy: 1172, 2
+  size: 43, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+Rainbow_11
+  rotate: false
+  xy: 1432, 2
+  size: 47, 50
+  orig: 48, 52
+  offset: 0, 1
+  index: -1
+Rainbow_12
+  rotate: false
+  xy: 1302, 2
+  size: 39, 52
+  orig: 40, 52
+  offset: 0, 0
+  index: -1
+Rainbow_2
+  rotate: false
+  xy: 262, 2
+  size: 38, 56
+  orig: 40, 56
+  offset: 1, 0
+  index: -1
+Rainbow_3
+  rotate: false
+  xy: 392, 2
+  size: 36, 56
+  orig: 36, 56
+  offset: 0, 0
+  index: -1
+Rainbow_4
+  rotate: false
+  xy: 522, 2
+  size: 36, 56
+  orig: 36, 56
+  offset: 0, 0
+  index: -1
+Rainbow_5
+  rotate: false
+  xy: 652, 2
+  size: 38, 38
+  orig: 40, 40
+  offset: 1, 1
+  index: -1
+Rainbow_6
+  rotate: false
+  xy: 782, 2
+  size: 38, 38
+  orig: 40, 40
+  offset: 1, 1
+  index: -1
+Rainbow_8
+  rotate: false
+  xy: 912, 2
+  size: 53, 78
+  orig: 56, 80
+  offset: 1, 1
+  index: -1
+Rainbow_9
+  rotate: false
+  xy: 1042, 2
+  size: 71, 58
+  orig: 72, 60
+  offset: 0, 1
+  index: -1

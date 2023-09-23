@@ -1,0 +1,426 @@
+
+Void Knight.png
+size: 1988,384
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2ARM A1
+  rotate: true
+  xy: 1749, 2
+  size: 52, 44
+  orig: 56, 56
+  offset: 3, 8
+  index: -1
+2ARM A2
+  rotate: true
+  xy: 1394, 2
+  size: 22, 52
+  orig: 28, 54
+  offset: 1, 1
+  index: -1
+2ARM A3
+  rotate: false
+  xy: 1340, 26
+  size: 78, 176
+  orig: 80, 180
+  offset: 1, 2
+  index: -1
+2BODY
+  rotate: false
+  xy: 1179, 12
+  size: 79, 184
+  orig: 80, 188
+  offset: 1, 2
+  index: -1
+2HEAD
+  rotate: true
+  xy: 1805, 174
+  size: 95, 108
+  orig: 96, 112
+  offset: 1, 2
+  index: -1
+2SMOKE
+  rotate: true
+  xy: 172, 138
+  size: 244, 168
+  orig: 244, 168
+  offset: 0, 0
+  index: -1
+2WING A
+  rotate: true
+  xy: 979, 198
+  size: 184, 160
+  orig: 184, 160
+  offset: 0, 0
+  index: -1
+2WING B
+  rotate: false
+  xy: 1141, 198
+  size: 112, 184
+  orig: 112, 184
+  offset: 0, 0
+  index: -1
+3ARM A1
+  rotate: true
+  xy: 1795, 29
+  size: 52, 44
+  orig: 56, 52
+  offset: 3, 6
+  index: -1
+3ARM A2
+  rotate: true
+  xy: 1448, 5
+  size: 22, 52
+  orig: 28, 56
+  offset: 1, 2
+  index: -1
+3ARM A3
+  rotate: false
+  xy: 812, 2
+  size: 89, 189
+  orig: 92, 192
+  offset: 1, 2
+  index: -1
+3BODY
+  rotate: false
+  xy: 1260, 16
+  size: 78, 182
+  orig: 80, 184
+  offset: 1, 1
+  index: -1
+3HEAD
+  rotate: true
+  xy: 1797, 83
+  size: 89, 107
+  orig: 92, 112
+  offset: 1, 2
+  index: -1
+3SMOKE
+  rotate: true
+  xy: 342, 138
+  size: 244, 168
+  orig: 244, 168
+  offset: 0, 0
+  index: -1
+3WING A
+  rotate: true
+  xy: 527, 2
+  size: 182, 156
+  orig: 184, 156
+  offset: 1, 0
+  index: -1
+3WING B
+  rotate: false
+  xy: 652, 191
+  size: 104, 191
+  orig: 104, 196
+  offset: 0, 5
+  index: -1
+ARM A1
+  rotate: true
+  xy: 1703, 2
+  size: 52, 44
+  orig: 56, 52
+  offset: 3, 6
+  index: -1
+ARM A2
+  rotate: true
+  xy: 1340, 2
+  size: 22, 52
+  orig: 28, 54
+  offset: 1, 1
+  index: -1
+ARM A3
+  rotate: false
+  xy: 758, 193
+  size: 89, 189
+  orig: 92, 192
+  offset: 1, 2
+  index: -1
+BODY
+  rotate: false
+  xy: 1255, 200
+  size: 78, 182
+  orig: 80, 184
+  offset: 1, 1
+  index: -1
+FX/Fx1_1
+  rotate: false
+  xy: 1335, 204
+  size: 127, 178
+  orig: 200, 200
+  offset: 26, 20
+  index: -1
+FX/Fx1_11
+  rotate: false
+  xy: 1540, 39
+  size: 116, 168
+  orig: 200, 200
+  offset: 52, 3
+  index: -1
+FX/Fx1_12
+  rotate: false
+  xy: 1584, 216
+  size: 112, 166
+  orig: 200, 200
+  offset: 54, 3
+  index: -1
+FX/Fx1_13
+  rotate: false
+  xy: 1698, 260
+  size: 105, 122
+  orig: 200, 200
+  offset: 60, 3
+  index: -1
+FX/Fx1_14
+  rotate: true
+  xy: 1805, 271
+  size: 65, 111
+  orig: 200, 200
+  offset: 96, 8
+  index: -1
+FX/Fx1_15
+  rotate: true
+  xy: 1805, 271
+  size: 65, 111
+  orig: 200, 200
+  offset: 96, 8
+  index: -1
+FX/Fx1_16
+  rotate: true
+  xy: 1703, 163
+  size: 51, 92
+  orig: 200, 200
+  offset: 105, 17
+  index: -1
+FX/Fx1_17
+  rotate: false
+  xy: 1890, 37
+  size: 44, 44
+  orig: 200, 200
+  offset: 109, 19
+  index: -1
+FX/Fx1_18
+  rotate: false
+  xy: 1841, 34
+  size: 47, 47
+  orig: 200, 200
+  offset: 107, 17
+  index: -1
+FX/Fx1_2
+  rotate: false
+  xy: 512, 186
+  size: 138, 196
+  orig: 200, 200
+  offset: 29, 2
+  index: -1
+FX/Fx1_3
+  rotate: true
+  xy: 2, 2
+  size: 134, 195
+  orig: 200, 200
+  offset: 33, 2
+  index: -1
+FX/Fx1_4
+  rotate: true
+  xy: 290, 7
+  size: 129, 190
+  orig: 200, 200
+  offset: 39, 2
+  index: -1
+FX/Fx1_5
+  rotate: true
+  xy: 290, 7
+  size: 129, 190
+  orig: 200, 200
+  offset: 39, 2
+  index: -1
+FX/Fx1_6
+  rotate: false
+  xy: 685, 4
+  size: 125, 185
+  orig: 200, 200
+  offset: 43, 2
+  index: -1
+FX/Fx1_7
+  rotate: false
+  xy: 849, 194
+  size: 128, 188
+  orig: 200, 200
+  offset: 40, 2
+  index: -1
+FX/Fx1_8
+  rotate: false
+  xy: 1420, 29
+  size: 118, 173
+  orig: 200, 200
+  offset: 50, 2
+  index: -1
+FX/Fx1_9
+  rotate: false
+  xy: 1464, 209
+  size: 118, 173
+  orig: 200, 200
+  offset: 51, 2
+  index: -1
+FX/Fx1_10
+  rotate: false
+  xy: 1464, 209
+  size: 118, 173
+  orig: 200, 200
+  offset: 51, 2
+  index: -1
+FX/Fx2_1
+  rotate: true
+  xy: 1936, 12
+  size: 41, 43
+  orig: 200, 200
+  offset: 16, 82
+  index: -1
+FX/Fx2_10
+  rotate: false
+  xy: 1698, 216
+  size: 77, 42
+  orig: 200, 200
+  offset: 101, 81
+  index: -1
+FX/Fx2_11
+  rotate: false
+  xy: 1698, 216
+  size: 77, 42
+  orig: 200, 200
+  offset: 101, 81
+  index: -1
+FX/Fx2_12
+  rotate: false
+  xy: 1918, 245
+  size: 67, 42
+  orig: 200, 200
+  offset: 114, 81
+  index: -1
+FX/Fx2_13
+  rotate: false
+  xy: 1915, 202
+  size: 64, 41
+  orig: 200, 200
+  offset: 117, 82
+  index: -1
+FX/Fx2_14
+  rotate: false
+  xy: 1915, 160
+  size: 64, 40
+  orig: 200, 200
+  offset: 118, 82
+  index: -1
+FX/Fx2_15
+  rotate: false
+  xy: 1925, 343
+  size: 61, 39
+  orig: 200, 200
+  offset: 121, 83
+  index: -1
+FX/Fx2_16
+  rotate: false
+  xy: 1925, 343
+  size: 61, 39
+  orig: 200, 200
+  offset: 121, 83
+  index: -1
+FX/Fx2_17
+  rotate: true
+  xy: 1540, 6
+  size: 31, 38
+  orig: 200, 200
+  offset: 152, 83
+  index: -1
+FX/Fx2_2
+  rotate: true
+  xy: 1658, 2
+  size: 66, 43
+  orig: 200, 200
+  offset: 17, 82
+  index: -1
+FX/Fx2_3
+  rotate: true
+  xy: 1936, 55
+  size: 103, 43
+  orig: 200, 200
+  offset: 16, 82
+  index: -1
+FX/Fx2_4
+  rotate: true
+  xy: 482, 7
+  size: 129, 43
+  orig: 200, 200
+  offset: 16, 82
+  index: -1
+FX/Fx2_5
+  rotate: true
+  xy: 1658, 70
+  size: 144, 43
+  orig: 200, 200
+  offset: 23, 81
+  index: -1
+FX/Fx2_6
+  rotate: true
+  xy: 1658, 70
+  size: 144, 43
+  orig: 200, 200
+  offset: 23, 81
+  index: -1
+FX/Fx2_7
+  rotate: true
+  xy: 245, 5
+  size: 131, 43
+  orig: 200, 200
+  offset: 39, 81
+  index: -1
+FX/Fx2_8
+  rotate: true
+  xy: 199, 3
+  size: 133, 44
+  orig: 200, 200
+  offset: 42, 80
+  index: -1
+FX/Fx2_9
+  rotate: false
+  xy: 1805, 338
+  size: 118, 44
+  orig: 200, 200
+  offset: 58, 80
+  index: -1
+HEAD
+  rotate: false
+  xy: 1703, 56
+  size: 88, 105
+  orig: 92, 112
+  offset: 2, 4
+  index: -1
+SMOKE
+  rotate: true
+  xy: 2, 138
+  size: 244, 168
+  orig: 244, 168
+  offset: 0, 0
+  index: -1
+WING A
+  rotate: true
+  xy: 903, 8
+  size: 184, 160
+  orig: 184, 160
+  offset: 0, 0
+  index: -1
+WING B
+  rotate: false
+  xy: 1065, 12
+  size: 112, 184
+  orig: 112, 184
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 1925, 289
+  size: 58, 52
+  orig: 64, 64
+  offset: 3, 6
+  index: -1

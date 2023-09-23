@@ -1,0 +1,27 @@
+
+itemicon_eye.png
+size: 304,144
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Eye
+  rotate: false
+  xy: 199, 41
+  size: 101, 101
+  orig: 103, 103
+  offset: 1, 1
+  index: -1
+Eye_Glow
+  rotate: false
+  xy: 199, 3
+  size: 45, 36
+  orig: 47, 38
+  offset: 1, 1
+  index: -1
+Eye_back
+  rotate: false
+  xy: 2, 2
+  size: 195, 140
+  orig: 195, 140
+  offset: 0, 0
+  index: -1

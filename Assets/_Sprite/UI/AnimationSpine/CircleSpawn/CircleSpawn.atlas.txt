@@ -1,0 +1,20 @@
+
+CircleSpawn.png
+size: 1032,516
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Circle_15
+  rotate: false
+  xy: 516, 2
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+Circle_5
+  rotate: false
+  xy: 2, 2
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1

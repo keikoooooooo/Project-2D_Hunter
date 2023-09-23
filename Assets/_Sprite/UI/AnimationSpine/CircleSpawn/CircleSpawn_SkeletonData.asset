@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
+  m_Name: CircleSpawn_SkeletonData
+  m_EditorClassIdentifier: 
+  atlasAssets:
+  - {fileID: 11400000, guid: 39367ec177c2c6d48a0f666e98a8b840, type: 2}
+  scale: 0.01
+  skeletonJSON: {fileID: 4900000, guid: 2de4585a46aa47b469bc743978774689, type: 3}
+  isUpgradingBlendModeMaterials: 0
+  blendModeMaterials:
+    requiresBlendModeMaterials: 1
+    applyAdditiveMaterial: 1
+    additiveMaterials:
+    - pageName: CircleSpawn.png
+      material: {fileID: 2100000, guid: c9ff06254f623284eac9ace69ee03af3, type: 2}
+    multiplyMaterials: []
+    screenMaterials:
+    - pageName: CircleSpawn.png
+      material: {fileID: 2100000, guid: baaa3e5232ec2a849a45c2fd8877c92c, type: 2}
+  skeletonDataModifiers: []
+  fromAnimation: []
+  toAnimation: []
+  duration: []
+  defaultMix: 0.2
+  controller: {fileID: 9100000, guid: ac91758ccaccafe4192a6ce8ab80233b, type: 2}
