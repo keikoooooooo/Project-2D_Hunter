@@ -4,42 +4,44 @@ using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour, IData
 {
-    [SerializeField] LeanLocalization leanLocalization;
-    SettingsData _settingData;
-    [SerializeField] GameObject panelSettings;
+    [SerializeField] private LeanLocalization leanLocalization;
+    private SettingsData _settingData;
+    [SerializeField] private GameObject panelSettings;
     [Space]
-    [SerializeField] Button bttSoundFx;
-    [SerializeField] Button bttMusic;
+    [SerializeField]
+    private Button bttSoundFx;
+    [SerializeField] private Button bttMusic;
     [Space]
-    [SerializeField] Slider sliderSoundFx;
-    [SerializeField] Slider sliderMusic;
+    [SerializeField] private Slider sliderSoundFx;
+    [SerializeField] private Slider sliderMusic;
     [Space]
-    [SerializeField] Image iconSoundFx;
-    [SerializeField] Image iconMusic;
-    [SerializeField] Sprite[] spriteSoundIcon;
-    [SerializeField] Sprite[] spriteMusicIcon;
+    [SerializeField] private Image iconSoundFx;
+    [SerializeField] private Image iconMusic;
+    [SerializeField] private Sprite[] spriteSoundIcon;
+    [SerializeField] private Sprite[] spriteMusicIcon;
     [Space]
-    [SerializeField] Image iconLanguage;
-    [SerializeField] Button bttLanguageLeftButton;
-    [SerializeField] Button bttLanguageRightButton;
-    [SerializeField] Sprite[] spriteLanguges;
+    [SerializeField] private Image iconLanguage;
+    [SerializeField] private Button bttLanguageLeftButton;
+    [SerializeField] private Button bttLanguageRightButton;
+    [SerializeField] private Sprite[] spriteLanguges;
     [Space]
-    [SerializeField] Button bttOtherGame;
-    [SerializeField] Button bttTermsOfService;
-    [SerializeField] Button bttPrivacyPolicy;
-    [SerializeField] Button bttSupport;
-    [SerializeField] Button bttQuit;
+    [SerializeField] private Button bttOtherGame;
+    [SerializeField] private Button bttTermsOfService;
+    [SerializeField] private Button bttPrivacyPolicy;
+    [SerializeField] private Button bttSupport;
+    [SerializeField] private Button bttQuit;
 
     private bool isOnclickSound, isOnclickMusic;
-    int languageOption = 0;
+    private int languageOption = 0;
 
 
-    void OnEnable()
+    private void OnEnable()
     {
         Initialized();
         SubscribeEvent();
     }
-    void OnDisable()
+
+    private void OnDisable()
     {
         UnSubscribeEvent();
     }
@@ -57,7 +59,7 @@ public class SettingsMenu : MonoBehaviour, IData
     }
     private void LoadData()
     {
-        string languegeName = _settingData.LanguegeName;
+        var languegeName = _settingData.LanguegeName;
         languageOption = _settingData.LanguageOption;
         iconLanguage.sprite = spriteLanguges[languageOption]; 
         isOnclickSound = _settingData.isOnclickSound;
@@ -93,7 +95,8 @@ public class SettingsMenu : MonoBehaviour, IData
         AudioManager.Instance.SFXSource.volume = sliderSoundFx.value;
         AudioManager.Instance.MusicSource.volume = sliderMusic.value;
     }
-    void Initialized()
+
+    private void Initialized()
     {
         DataReference.Register_IData(this);
     }
@@ -127,7 +130,8 @@ public class SettingsMenu : MonoBehaviour, IData
         sliderSoundFx.onValueChanged.RemoveListener(ChangedValueOnSoundFxSlider);
         sliderMusic.onValueChanged.RemoveListener(ChangedValueOnMusicSlider);
     }
-    void CloseSetting()
+
+    private void CloseSetting()
     {
         panelSettings.SetActive(false);
 

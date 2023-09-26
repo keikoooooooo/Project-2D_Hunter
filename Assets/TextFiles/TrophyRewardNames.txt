@@ -8,11 +8,11 @@ Normal Chest
 Gem
 Coin
 Gem
-Yeti
-Coin
 Normal Chest
-Gem
 Coin
+Coin
+Gem
+Normal Chest
 Gem
 Coin
 Normal Chest

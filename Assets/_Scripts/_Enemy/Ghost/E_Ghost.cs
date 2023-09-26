@@ -4,11 +4,12 @@ public class E_Ghost : EnemyController
 {
    
     [Header("----- Private Methods -----")] [Space]
-    [SerializeField] Transform posSkill1;
-    [SerializeField] Transform posSkill;
+    [SerializeField]
+    private Transform posSkill1;
+    [SerializeField] private Transform posSkill;
 
-    [SerializeField] ParticleSkills skill1Prefab;
-    ObjectPool<ParticleSkills> poolSkill1;
+    [SerializeField] private ParticleSkills skill1Prefab;
+    private ObjectPool<ParticleSkills> poolSkill1;
 
 
     #region Private Methods
@@ -27,11 +28,13 @@ public class E_Ghost : EnemyController
 
 
     #region Public Methods
-    void Initialized()
+
+    private void Initialized()
     {
         poolSkill1 = new ObjectPool<ParticleSkills>(skill1Prefab, slotsVFX, 0);
     }
-    void SubscribeEvent() // đăng kí sự kiện theo level
+
+    private void SubscribeEvent() // đăng kí sự kiện theo level
     {
         int level = base.level;
 
@@ -41,12 +44,14 @@ public class E_Ghost : EnemyController
             _ => OnSkill,
         };
     }
-    void UnSubscribeEvent() // hủy kí sự kiện theo level
+
+    private void UnSubscribeEvent() // hủy kí sự kiện theo level
     {
         E_AttackSkill -= OnSkill1;
         E_AttackSkill -= OnSkill;
     }
-    void OnSkill1() // lv1
+
+    private void OnSkill1() // lv1
     {
         Vector2 direction = base.player.transform.position - posSkill1.position; // lấy hướng của player
         direction.y += 1;
@@ -54,7 +59,8 @@ public class E_Ghost : EnemyController
         skill.SetStats(posSkill1.position, Status.damage);// set các thông tin cho skill 
         skill.Shoot(direction, 8);     // và bắn skill ra
     }
-    void OnSkill() // lv2, lv3
+
+    private void OnSkill() // lv2, lv3
     {
         var hit = base.Raycast();
 

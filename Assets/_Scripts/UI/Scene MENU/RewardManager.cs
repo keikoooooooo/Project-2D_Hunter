@@ -5,23 +5,23 @@ using UnityEngine.UI;
 public class RewardManager : SingletonManager<RewardManager>
 {
     [SerializeField] GameObject panelReward;
-    [SerializeField] Button bttClaim;
+    [SerializeField] private Button bttClaim;
     [Space]
-    [SerializeField] BoxReward boxRewardPrefab;
-    [SerializeField] Transform contentSpawn;
+    [SerializeField]
+    private BoxReward boxRewardPrefab;
+    [SerializeField] private Transform contentSpawn;
 
     ObjectPool<BoxReward> poolBoxReward;
-    List<BoxReward> rewardList;
+    private List<BoxReward> rewardList;
     Audio _audio;
 
 
-
-    void OnEnable()
+    private void OnEnable()
     {
         Initialized();
     }
 
-    void Initialized()
+    private void Initialized()
     {
         _audio = GetComponent<Audio>();
         rewardList = new List<BoxReward>();

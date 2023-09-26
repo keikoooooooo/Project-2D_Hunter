@@ -23,16 +23,17 @@ public class CutSceneEnemy : MonoBehaviour
     TrackEntry trackCurrent; // animation hiện tại đang active?
 
 
-    void Start()
+    private void Start()
     {
         Initialized();
     }
-    void FixedUpdate()
+
+    private void FixedUpdate()
     {
         Flip();
-        //Attack();
     }
-    void OnDestroy()
+
+    private void OnDestroy()
     {
         Status.OnHealthChanged -= healthBar.SetValue;
         enemyAnimation.animationState.Complete -= CompleteAnimation;
@@ -40,7 +41,7 @@ public class CutSceneEnemy : MonoBehaviour
     }
 
 
-    void Initialized() // Khởi tạo ??
+    private void Initialized() // Khởi tạo ??
     {
         enemyAnimation.Idle();
         Status.SetStats(stats_SO, 1);
@@ -54,7 +55,7 @@ public class CutSceneEnemy : MonoBehaviour
         StartCoroutine(CheckTriggerPlayer());
     }
 
-    void Flip()
+    private void Flip()
     {
         if (isDistance)
         {
@@ -79,7 +80,7 @@ public class CutSceneEnemy : MonoBehaviour
         }
     }
 
-    void Die()
+    private void Die()
     {
         E_EnemyDie?.Invoke();
         trackCurrent = null;
@@ -90,16 +91,16 @@ public class CutSceneEnemy : MonoBehaviour
     }
 
 
-    void Attack()
+    private void Attack()
     {
-        if (isAttack && !isDead && !playerIsDead && trackCurrent == null && !player.isDie && !player.isOutOfBlood && player.CompareTag("Player"))
-        {
-            enemyAnimation.Attack();
-            trackCurrent = enemyAnimation.GetTrackEntry();
-        }
+        if (!isAttack || isDead || playerIsDead || trackCurrent != null || player.isDie || player.isOutOfBlood ||
+            !player.CompareTag("Player")) return;
+        
+        enemyAnimation.Attack();
+        trackCurrent = enemyAnimation.GetTrackEntry();
     }
 
-    IEnumerator CheckTriggerPlayer()
+    private IEnumerator CheckTriggerPlayer()
     {
         while (true)
         {
@@ -117,13 +118,10 @@ public class CutSceneEnemy : MonoBehaviour
         }
 
     }
-    public void PlayerDie()
-    {
-        playerIsDead = true;
-    }
 
-    Collider2D Raycast() => Physics2D.OverlapCircle(transform.position,2, layerMask);
-    void CompleteAnimation(TrackEntry trackEntry) // Hoàn thành 1 animation
+    private Collider2D Raycast() => Physics2D.OverlapCircle(transform.position,2, layerMask);
+
+    private void CompleteAnimation(TrackEntry trackEntry) // Hoàn thành 1 animation
     {
         if (trackEntry.Animation.Name == "Attack")
         {
@@ -132,7 +130,8 @@ public class CutSceneEnemy : MonoBehaviour
             enemyAnimation.Idle();
         }
     }
-    void EventAnimation(TrackEntry trackEntry, Spine.Event e)
+
+    private void EventAnimation(TrackEntry trackEntry, Spine.Event e)
     {
         var hit = Raycast();
         if(hit != null && hit.TryGetComponent<CutScenePlayer>(out var p))

@@ -51,11 +51,12 @@ public class MenuGameManager : SingletonManager<MenuGameManager>, IData
     CharactersData _charactersData;
     #endregion
 
-    void OnEnable()
+    private void OnEnable()
     {
         DataReference.Register_IData(this);
     }
-    void Start()
+
+    private void Start()
     {
         AudioManager.Instance.Play(AudioName.Menu);
 
@@ -67,7 +68,8 @@ public class MenuGameManager : SingletonManager<MenuGameManager>, IData
         GameManager.Instance.UpdateMultiData();  // yêu cầu gửi data 
         GameManager.Instance.E_PowerRecoveryTime += TextPowerRecoveryTime;
     }
-    void OnDisable()
+
+    private void OnDisable()
     {
        if (GameManager.Instance) GameManager.Instance.E_PowerRecoveryTime -= TextPowerRecoveryTime;
     }
@@ -88,7 +90,7 @@ public class MenuGameManager : SingletonManager<MenuGameManager>, IData
         SetChestReward();
     }
 
-    void SetTextProfile() // cập nhật data ra UI
+    private void SetTextProfile() // cập nhật data ra UI
     {
         textUsername.text = _userData.Username;
         textUsername.color = _userData.LastUsedColor.HexToColor();
@@ -103,9 +105,10 @@ public class MenuGameManager : SingletonManager<MenuGameManager>, IData
         skeletonGraphic.initialSkinName = $"V{_charactersData.LastUsedCharacterSkin}";
         skeletonGraphic.Initialize(true);
     }
-    void SetChestReward()
+
+    private void SetChestReward()
     {
-        int token = _userData.Token;
+        var token = _userData.Token;
         textValueChestReward.text = $"{token}/10000";
         sliderChestReward.minValue = 0;
         sliderChestReward.maxValue = 10000;

@@ -4,21 +4,21 @@
 public class SpawnVFX : SingletonManager<SpawnVFX>
 {
 
-    [Space][SerializeField] Fx_Text textHandlerPrefab; // text damge, heal, +xp
-    [Space][SerializeField] Fx_Partical fxEnemyDiePrefab;    // fx khi 1 enemy chết
-    [Space][SerializeField] Fx_Circle circlePrefab; // fx khi chuẩn bị spawn 1 enemy 
-    [Space][SerializeField] Fx_XP xpItemPrefab; // fx item khi tiêu diệt enemy
-    [Space][SerializeField] Fx_Partical fxPlayerDiePrefab; // fx khi 1 player chết
+    [Space][SerializeField] private Fx_Text textHandlerPrefab; // text damge, heal, +xp
+    [Space][SerializeField] private Fx_Partical fxEnemyDiePrefab;    // fx khi 1 enemy chết
+    [Space][SerializeField] private Fx_Circle circlePrefab; // fx khi chuẩn bị spawn 1 enemy 
+    [Space][SerializeField] private Fx_XP xpItemPrefab; // fx item khi tiêu diệt enemy
+    [Space][SerializeField] private Fx_Partical fxPlayerDiePrefab; // fx khi 1 player chết
 
-    ObjectPool<Fx_Text> poolTextHandler;
-    ObjectPool<Fx_Partical> poolFxEnemyDie;
-    ObjectPool<Fx_Circle> poolCircleSpawn;
-    ObjectPool<Fx_XP> poolXPItem;
-    ObjectPool<Fx_Partical> poolFxPlayerDie;
+    private ObjectPool<Fx_Text> poolTextHandler;
+    private ObjectPool<Fx_Partical> poolFxEnemyDie;
+    private ObjectPool<Fx_Circle> poolCircleSpawn;
+    private ObjectPool<Fx_XP> poolXPItem;
+    private ObjectPool<Fx_Partical> poolFxPlayerDie;
 
-    void OnEnable() => Initialization();
+    private void OnEnable() => Initialization();
 
-    void Initialization() // khởi tạo ?
+    private void Initialization() // khởi tạo ?
     {
         poolTextHandler = new ObjectPool<Fx_Text>(textHandlerPrefab, transform, 1);
         poolFxEnemyDie = new ObjectPool<Fx_Partical>(fxEnemyDiePrefab, transform, 0);
@@ -28,7 +28,8 @@ public class SpawnVFX : SingletonManager<SpawnVFX>
     }
 
     #region Public Methods
-    Vector2 RandomPos(Vector2 pos) => new Vector2(Random.Range(pos.x - 1f, pos.x + 1f), Random.Range(pos.y - .3f, pos.y + .3f)); // rand 1 vị trí ngẫu nhiên 
+
+    private Vector2 RandomPos(Vector2 pos) => new Vector2(Random.Range(pos.x - 1f, pos.x + 1f), Random.Range(pos.y - .3f, pos.y + .3f)); // rand 1 vị trí ngẫu nhiên 
 
     public Fx_Circle Get_CircleFX(Vector2 pos)
     {
@@ -45,7 +46,7 @@ public class SpawnVFX : SingletonManager<SpawnVFX>
     }
     public Fx_Partical Get_FXPlayerDie(Vector2 pos)
     {
-        Fx_Partical fx = poolFxPlayerDie.Get();
+        var fx = poolFxPlayerDie.Get();
         fx.SetStats(pos);
         return fx;
     }

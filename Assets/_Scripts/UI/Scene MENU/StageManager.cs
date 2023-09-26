@@ -5,23 +5,24 @@ using UnityEngine.UI;
 
 public class StageManager : MonoBehaviour, IData
 {
-    [SerializeField] GameObject panelStage;
+    [SerializeField] private GameObject panelStage;
 
-    [SerializeField] Button[] bttMap;
-    [SerializeField] GameObject[] tickUse;
+    [SerializeField] private Button[] bttMap;
+    [SerializeField] private GameObject[] tickUse;
 
 
     [Header("Desert Map")][Space]
-    [SerializeField] Slider sliderDesert;
-    [SerializeField] TextMeshProUGUI textProgressDesert;
-    [SerializeField] GameObject panelLockDesertMap;
+    [SerializeField]
+    private Slider sliderDesert;
+    [SerializeField] private TextMeshProUGUI textProgressDesert;
+    [SerializeField] private GameObject panelLockDesertMap;
 
 
-    int currentTrophy;
-    int mapIndex;
+    private int currentTrophy;
+    private int mapIndex;
 
 
-    void Awake()
+    private void Awake()
     {
         DataReference.Register_IData(this);
     }
@@ -56,7 +57,7 @@ public class StageManager : MonoBehaviour, IData
         textProgressDesert.text = $"{sliderDesert.value} / {sliderDesert.maxValue}";
     }
 
-    void SetStateButton()
+    private void SetStateButton()
     {
         for (int i = 1; i <= bttMap.Length; i++)
         {

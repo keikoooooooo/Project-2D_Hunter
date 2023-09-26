@@ -11,13 +11,13 @@ public class LoadingManager : SingletonManager<LoadingManager>
 {
     public event LoadingScreenSuccessfully E_LoadingSuccess;
 
-    [SerializeField] GameObject panelLoading;
-    [SerializeField] Image fill;
-    [SerializeField] TextMeshProUGUI textAnim;
-    [SerializeField] TextMeshProUGUI textProgress;
+    [SerializeField] private GameObject panelLoading;
+    [SerializeField] private Image fill;
+    [SerializeField] private TextMeshProUGUI textAnim;
+    [SerializeField] private TextMeshProUGUI textProgress;
 
     private float _target;
-    Coroutine _fillCoroutine;
+    private Coroutine _fillCoroutine;
 
 
     public async void LoadScene(string sceneName)
@@ -48,7 +48,7 @@ public class LoadingManager : SingletonManager<LoadingManager>
         E_LoadingSuccess?.Invoke(); // gọi event khi load xong
     }
 
-    IEnumerator FillCoroutine()
+    private IEnumerator FillCoroutine()
     {
         int _temp = 0;
         while (true)

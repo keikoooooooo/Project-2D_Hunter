@@ -5,13 +5,13 @@ using UnityEngine;
 public class Fx_Partical : MonoBehaviour, IPool<Fx_Partical> 
 {
 
-    [SerializeField] float delayActive;
+    [SerializeField] private float delayActive;
 
-    Action<Fx_Partical> _action;
+    private Action<Fx_Partical> _action;
 
-    Coroutine activeSkillCoroutine;
+    private Coroutine activeSkillCoroutine;
 
-    IEnumerator ActiveSkill()
+    private IEnumerator ActiveSkill()
     {
         yield return new WaitForSeconds(delayActive);
 

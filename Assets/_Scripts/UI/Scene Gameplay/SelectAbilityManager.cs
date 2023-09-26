@@ -9,25 +9,25 @@ public class SelectAbilityManager : MonoBehaviour
 
     public event AbilitySelectEventHandler E_OnSelectAbility;
 
-    [SerializeField] GameObject panelSelectAbility;
+    [SerializeField] private GameObject panelSelectAbility;
     [Space]
-    [SerializeField] TextMeshProUGUI textNameAbi1;
-    [SerializeField] TextMeshProUGUI textNameAbi2;
+    [SerializeField]
+    private TextMeshProUGUI textNameAbi1;
+    [SerializeField] private TextMeshProUGUI textNameAbi2;
     [Space]
-    [SerializeField] Image iconAbi1;
+    [SerializeField]
+    private Image iconAbi1;
     [SerializeField] Image iconAbi2;
-    //[Space]
-    //[SerializeField] Button bttAbi1;
-    //[SerializeField] Button bttAbi2;
+
 
     [Space(10)]
     private List<AbilityBase_SO> _proactiveAbility; // nhận về danh sách các khả năng chủ động của player
     private PlayerController player;
 
-    AbilityBase_SO ability1;
-    AbilityBase_SO ability2;
+    private AbilityBase_SO ability1;
+    private AbilityBase_SO ability2;
 
-    void Start()
+    private void Start()
     {
         _proactiveAbility = new List<AbilityBase_SO>();
         panelSelectAbility.SetActive(false);
@@ -40,13 +40,13 @@ public class SelectAbilityManager : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))   SelectAbility(1);
         if (Input.GetKeyDown(KeyCode.Alpha2))   SelectAbility(2);
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         if(E_OnSelectAbility != null) E_OnSelectAbility -= player.OnSelectAbility;
     }
@@ -58,10 +58,11 @@ public class SelectAbilityManager : MonoBehaviour
 
         RandomAbility();
     }
-    void RandomAbility()
+
+    private void RandomAbility()
     {
-        int element1 = Random.Range(0, _proactiveAbility.Count);
-        int element2 = Random.Range(0, _proactiveAbility.Count);
+        var element1 = Random.Range(0, _proactiveAbility.Count);
+        var element2 = Random.Range(0, _proactiveAbility.Count);
 
         while (element1 == element2)
         {
@@ -73,7 +74,8 @@ public class SelectAbilityManager : MonoBehaviour
 
         SetUIAbility(ability1, ability2);
     }
-    void SetUIAbility(AbilityBase_SO abi1, AbilityBase_SO abi2)
+
+    private void SetUIAbility(AbilityBase_SO abi1, AbilityBase_SO abi2)
     {
         textNameAbi1.text = abi1.AbiName;
         textNameAbi2.text = abi2.AbiName;
@@ -84,7 +86,7 @@ public class SelectAbilityManager : MonoBehaviour
     #endregion
 
 
-    void SelectAbility(int index)
+    private void SelectAbility(int index)
     {
         AudioManager.Instance.Play(AudioName.OnClick);
         switch (index)

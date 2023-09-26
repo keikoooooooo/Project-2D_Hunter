@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class Fx_XP : MonoBehaviour , IPool<Fx_XP>
 {
-    [SerializeField] ParticleSystem particleColor;
+    [SerializeField] private ParticleSystem particleColor;
 
-    ParticleSystemRenderer particleRenderer;
-    Material paticleMaterial;
+    private ParticleSystemRenderer particleRenderer;
+    private Material paticleMaterial;
 
-    [SerializeField] Color[] colorXp = new Color[4];
-    int level = 0;
+    [SerializeField] private Color[] colorXp = new Color[4];
+    private int level = 0;
 
-    Action<Fx_XP> action;
-    Audio _audio;
+    private Action<Fx_XP> action;
+    private Audio _audio;
 
-    void Awake()
+    private void Awake()
     {
         _audio = GetComponent<Audio>();
         particleRenderer = particleColor.GetComponent<ParticleSystemRenderer>();
@@ -27,9 +27,10 @@ public class Fx_XP : MonoBehaviour , IPool<Fx_XP>
         transform.position = pos;
         RandomXP();
     }
-    void RandomXP()
+
+    private void RandomXP()
     {
-        float val = UnityEngine.Random.value;      
+        var val = UnityEngine.Random.value;      
         level = 0;
         if (val <= .5f) 
         {
@@ -56,7 +57,7 @@ public class Fx_XP : MonoBehaviour , IPool<Fx_XP>
     
     public void Init(Action<Fx_XP> returnAction) => action = returnAction;
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {

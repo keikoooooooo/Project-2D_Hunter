@@ -5,7 +5,7 @@ public static class SpineManager
 {
     public static TrackEntry SetAnimation(AnimationState animationState, string animationName)
     {
-        TrackEntry trackEntry = animationState.SetAnimation(0, animationName, false);
+        var trackEntry = animationState.SetAnimation(0, animationName, false);
         switch (trackEntry.Animation.Name)
         {
             case "Idle":

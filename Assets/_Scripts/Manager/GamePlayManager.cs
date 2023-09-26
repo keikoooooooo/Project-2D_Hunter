@@ -15,7 +15,7 @@ public class GamePlayManager : SingletonManager<GamePlayManager>
     [HideInInspector] public int LastUsedCharacterSkin;
 
 
-    void OnEnable()
+    private void OnEnable()
     {
         SpawnEnvironment();
         SpawnPlayer();
@@ -25,28 +25,26 @@ public class GamePlayManager : SingletonManager<GamePlayManager>
         if(LoadingManager.Instance != null) LoadingManager.Instance.E_LoadingSuccess += Initialized;
 
         AudioManager.Instance.Play(AudioName.Gameplay);
-        //AudioManager.Instance.SFXSource.gameObject.transform.SetParent(cinemachineCamera.transform);
-        //AudioManager.Instance.MusicSource.gameObject.transform.SetParent(cinemachineCamera.transform);
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         if (LoadingManager.Instance != null) LoadingManager.Instance.E_LoadingSuccess -= Initialized;
     }
 
-    void Initialized()
+    private void Initialized()
     {
         startGame.Begin(); // gọi animation bắt đầu game
     }
 
 
-
-    void SpawnEnvironment()
+    private void SpawnEnvironment()
     {
         GameObject map = Instantiate(Map1, Vector3.zero, Quaternion.identity); // tạo map ra scene
         map.transform.SetParent(environment);
     }
-    void SpawnPlayer()
+
+    private void SpawnPlayer()
     {
         player = Instantiate(GameManager.Instance.CharactersData.PlayerController, Vector3.zero, Quaternion.identity); // tạo player ra scene
         LastUsedCharacterSkin = GameManager.Instance.CharactersData.LastUsedCharacterSkin;

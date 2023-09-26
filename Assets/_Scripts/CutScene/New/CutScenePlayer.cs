@@ -9,19 +9,19 @@ public class CutScenePlayer : PlayerController
     public UnityEvent E_OutOfBlood;
     public bool isOutOfBlood;
 
-    [Header("Private Methods ---")]
-    BoxCollider2D boxCollider;
-    bool _isAttackHold;
-    bool _isAttack;
+    [Header("Private Methods ---")] private BoxCollider2D boxCollider;
 
-    ExposedList<Slot> slots;
+    private bool _isAttackHold;
+    private bool _isAttack;
+
+    private ExposedList<Slot> slots;
 
     private bool _isSpecialAttack;
 
-    int _currentHealth;
+    private int _currentHealth;
 
     // phần trăm cộng thêm của các kĩ năng
-    float _percentRegen = 0;
+    private readonly float _percentRegen = 0;
 
 
     #region Private Methods
@@ -33,30 +33,35 @@ public class CutScenePlayer : PlayerController
         _currentHealth = Status.currentHealth;
         StartCoroutine(base.HealRepeat((int)_percentRegen * _currentHealth, 2));
     }
-    void Update()
+
+    private void Update()
     {
         if (isPaused || isDie) return;
 
         base.InputMove();
         InputAttack();
     }
-    void FixedUpdate() => base.Move(_isSpecialAttack || _isAttack);
+
+    private void FixedUpdate() => base.Move(_isSpecialAttack || _isAttack);
     #endregion
 
 
     #region Public Methods
-    void Initialized()
+
+    private void Initialized()
     {
         slots = PlayerAnimation.skeletonAnimation.skeleton.Slots; // lấy toàn bộ slot trong spine -> setcolor
 
         boxCollider = GetComponent<BoxCollider2D>();
     }
-    void InputAttack()
+
+    private void InputAttack()
     {
         AttackSpecial();
         AttackNormal();
     }
-    void AttackSpecial()
+
+    private void AttackSpecial()
     {
         if (_isAttackHold) return;
 
@@ -66,7 +71,8 @@ public class CutScenePlayer : PlayerController
             _isAttackHold = true;
         }
     }
-    void AttackNormal()
+
+    private void AttackNormal()
     {
         if (_isAttack) return;
 
@@ -78,7 +84,7 @@ public class CutScenePlayer : PlayerController
         }
     }
 
-    void Invisible(float amount) // giảm opacity => vô hình
+    private void Invisible(float amount) // giảm opacity => vô hình
     {
         foreach (Slot slot in slots)
         {
@@ -101,7 +107,8 @@ public class CutScenePlayer : PlayerController
             gameObject.tag = "PlayerTest";
         }
     }
-    IEnumerator CooldownAttackCoroutine(float time)
+
+    private IEnumerator CooldownAttackCoroutine(float time)
     {
         yield return new WaitForSeconds(time);
         _isAttackHold = false;

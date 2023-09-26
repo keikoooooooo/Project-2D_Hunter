@@ -7,24 +7,24 @@ using UnityEngine.UI;
 
 public class XPManager : SingletonManager<XPManager> 
 {
-    [SerializeField] Slider slider;
-    [SerializeField] TextMeshProUGUI textLevel;
+    [SerializeField] private Slider slider;
+    [SerializeField] private TextMeshProUGUI textLevel;
     public int countLevelUp; // số lượng đã lên cấp
 
     [Space(10)]
     public UnityEvent E_Levelup;
 
-    int level = 1;
-    float valueCurrent = 0;
+    private int level = 1;
+    private float valueCurrent = 0;
     public float bonusXp = 1;
 
-    void Start()
+    private void Start()
     {
         SetVaueDefault();
     }
 
 
-    void SetVaueDefault()
+    private void SetVaueDefault()
     {
         bonusXp = 1;
         level = 1;       
@@ -56,7 +56,8 @@ public class XPManager : SingletonManager<XPManager>
             slider.DOValue(valueCurrent, .3f);
         }
     }
-    void SetTextLevel() => textLevel.text = $"{level}";
+
+    private void SetTextLevel() => textLevel.text = $"{level}";
 
     public void SubtractCountLevelUp()
     {

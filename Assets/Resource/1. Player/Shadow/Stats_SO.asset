@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c61d493c8c6fb4db2ac5dafcfa22e5, type: 3}
   m_Name: Stats_SO
   m_EditorClassIdentifier: 
-  MaxHealth: 90
-  Damage: 28
+  MaxHealth: 120
+  Damage: 22
   MoveSpeed: 4.35
   AttackCooldown: 3
   RangeAttack: 2
@@ -64,8 +64,8 @@ MonoBehaviour:
     - Sprite: {fileID: 21300000, guid: 708708610597b9e49ac1510d54f7a561, type: 3}
       Price: 150
     CurrentSkin: 1
-    Level: 1
-    CurrentUpgradePoint: 0
-    MaxUpgradePoint: 5
-    UpgradePrice: 50
+    Level: 9
+    CurrentUpgradePoint: 40
+    MaxUpgradePoint: 125
+    UpgradePrice: 450
     Rarity: 1

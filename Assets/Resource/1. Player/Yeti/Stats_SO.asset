@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stats_SO
   m_EditorClassIdentifier: 
   MaxHealth: 130
-  Damage: 10
+  Damage: 15
   MoveSpeed: 3.6
   AttackCooldown: 2
   RangeAttack: 1

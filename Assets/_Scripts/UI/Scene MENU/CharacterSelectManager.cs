@@ -54,38 +54,35 @@ public class CharacterSelectManager : MonoBehaviour
     #endregion
 
 
-    void Awake()
+    private void Awake()
     {
         Initialized();
     }
-    void Start()
+
+    private void Start()
     {
         panelCharacterSelect.SetActive(false);
         bttBlockSelect.SetActive(false);
         bttBuySkin.gameObject.SetActive(false);
     }
-    void OnEnable()
+
+    private void OnEnable()
     {
         RegisterEvent();
     }
-    void OnDisable()
+
+    private void OnDisable()
     {
         UnRegisterEvent();
     }
 
-
-    public void ToolTest() // TEST: Tăng điểm nâng cấp
-    {
-        playerController.stats_SO.IncreaseUpgradePoint(20);
-        SetStats();
-        CheckUpgradeButton();
-    }
-    void Initialized()
+    private void Initialized()
     {
         poolFxUpgrade = new ObjectPool<Fx_Partical>(fx_UpgradePrefab, SlotsFxUpgrade, 1);
         selectAbilities = GetComponent<SelectAbilities>();
     }
-    void RegisterEvent()
+
+    private void RegisterEvent()
     {
         bttUpgrade.onClick.AddListener(OnClickUpgradeButton);
         bttChangeRightSkin.onClick.AddListener(OnClickNextSkinButton);
@@ -93,7 +90,8 @@ public class CharacterSelectManager : MonoBehaviour
         bttSelectCharacter.onClick.AddListener(OnClickSelectCharacterButton);
         bttBuySkin.onClick.AddListener(OnClickBuySkinButton);
     }
-    void UnRegisterEvent()
+
+    private void UnRegisterEvent()
     {
         bttUpgrade.onClick.RemoveListener(OnClickUpgradeButton);
         bttChangeRightSkin.onClick.RemoveListener(OnClickNextSkinButton);
@@ -128,15 +126,16 @@ public class CharacterSelectManager : MonoBehaviour
         CheckUpgradeButton();
         CheckInforCharacterButton();
     }
-    void SetStats()
+
+    private void SetStats()
     {
-        PlayerStats_SO stats_SO = playerController.stats_SO;
+        var stats_SO = playerController.stats_SO;
 
         // Left
         textCharacterName.text = infor.CharacterName;
         textCharacterLevel.text = $"{infor.Level}";
-        int maxPoint = infor.MaxUpgradePoint;
-        int currentPoint = infor.CurrentUpgradePoint;
+        var maxPoint = infor.MaxUpgradePoint;
+        var currentPoint = infor.CurrentUpgradePoint;
         fillProgress.fillAmount = (float)currentPoint / maxPoint;
         fillProgress.color = gradient.Evaluate(fillProgress.fillAmount);
         textProgress.text = $"{currentPoint}/{maxPoint}";
@@ -164,7 +163,8 @@ public class CharacterSelectManager : MonoBehaviour
             bttSelectCharacter.gameObject.SetActive(false);
         }
     }
-    void SetRarity()
+
+    private void SetRarity()
     {
         switch (infor.Rarity)
         {
@@ -186,7 +186,8 @@ public class CharacterSelectManager : MonoBehaviour
                 break;
         }
     }
-    void SpawnCircleShowSkin()
+
+    private void SpawnCircleShowSkin()
     {
         for (int i = 0; i < slotsCircleSpawn.childCount; i++)
         {
@@ -199,21 +200,24 @@ public class CharacterSelectManager : MonoBehaviour
             imagesSpawn.Add(image);
         }
     }
-    void CheckUpgradeButton()
+
+    private void CheckUpgradeButton()
     {
         if (infor.UpgradePrice > GameManager.Instance.UserData.Coin || infor.CurrentUpgradePoint < infor.MaxUpgradePoint)
             textUpgradePrice.color = new Color(.8f, .2f, .05f, 1); // đỏ
         else
             textUpgradePrice.color = new Color(0f, .5f, .4f, 1); // xanh
     }
-    void SetSkin()
+
+    private void SetSkin()
     {
         skeletonGraphic.initialSkinName = $"V{indexCurrentSkin}";
         skeletonGraphic.Initialize(true);
 
         SetColorShow();
     }
-    void CheckInforCharacterButton() // check mở khóa nhân vật và mua skin ? 
+
+    private void CheckInforCharacterButton() // check mở khóa nhân vật và mua skin ? 
     {
         if (infor.isUnlock) // nếu đã mở khóa ? 
         {
@@ -242,24 +246,23 @@ public class CharacterSelectManager : MonoBehaviour
             bttSelectCharacter.gameObject.SetActive(false);
         }
     }
-    void SetColorShow()
+
+    private void SetColorShow()
     {
-        for (int i = 1; i <= totalSkin; i++)
+        for (var i = 1; i <= totalSkin; i++)
         {
-            if(i == indexCurrentSkin)
-                imagesSpawn[i - 1].color = new Color(.67f, .67f, .67f);
-            else                    
-                imagesSpawn[i - 1].color = new Color(.27f, .27f, .27f);
+            imagesSpawn[i - 1].color = i == indexCurrentSkin ? new Color(.67f, .67f, .67f) : new Color(.27f, .27f, .27f);
         }
     }
 
-    void ActiveTextPopUp()
+    private void ActiveTextPopUp()
     {
         textPopUpDamage.gameObject.SetActive(true);
         textPopUpHealth.gameObject.SetActive(true);
         Invoke(nameof(InActiveTextPopUp), .5f);
     }
-    void InActiveTextPopUp()
+
+    private void InActiveTextPopUp()
     {
         textPopUpDamage.gameObject.SetActive(false);
         textPopUpHealth.gameObject.SetActive(false);

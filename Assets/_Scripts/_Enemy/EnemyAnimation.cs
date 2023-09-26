@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class EnemyAnimation : MonoBehaviour
 {
-    const string A_Idle = "Idle";
-    const string A_Walk = "Walk";
-    const string A_Attack = "Attack";
+    private const string A_Idle = "Idle";
+    private const string A_Walk = "Walk";
+    private const string A_Attack = "Attack";
 
     public SkeletonAnimation skeletonAnimation;
     public Spine.AnimationState animationState;
     private Vector3 sizeChar;
 
-    void Awake() => animationState = skeletonAnimation.AnimationState;
-    void Start()
+    private void Awake() => animationState = skeletonAnimation.AnimationState;
+
+    private void Start()
     {
         Idle();
         sizeChar = skeletonAnimation.transform.localScale;

@@ -8,23 +8,23 @@ public class Fx_Circle : MonoBehaviour , IPool<Fx_Circle>
 {
     public event Action<Fx_Circle> E_EndCircleEffect; // khi hết animation -> gọi event
 
-    SkeletonAnimation skeleton;
-    Spine.AnimationState animationState;
+    private SkeletonAnimation skeleton;
+    private Spine.AnimationState animationState;
 
-    Action<Fx_Circle> action;
+    private Action<Fx_Circle> action;
     public void Init(Action<Fx_Circle> action)=> this.action = action;
- 
-    void Awake()
+
+    private void Awake()
     {
         skeleton = GetComponent<SkeletonAnimation>();
         animationState = skeleton.AnimationState;
         animationState.Complete += OnCompleteAnimation;
     }
 
-    void OnDestroy() => animationState.Complete -= OnCompleteAnimation;
+    private void OnDestroy() => animationState.Complete -= OnCompleteAnimation;
 
 
-    void OnCompleteAnimation(TrackEntry trackEntry)
+    private void OnCompleteAnimation(TrackEntry trackEntry)
     {
         E_EndCircleEffect?.Invoke(this);
         action(this);

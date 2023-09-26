@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class FillAttackColldown : MonoBehaviour
 {
-    [SerializeField] Image fill;
-    Coroutine coroutineCooldown;
+    [SerializeField] private Image fill;
+    private Coroutine coroutineCooldown;
 
     public void StartColldown(float timer)
     {
@@ -22,9 +22,9 @@ public class FillAttackColldown : MonoBehaviour
         }
     }
 
-    IEnumerator CooldownCoroutine(float timer)
+    private IEnumerator CooldownCoroutine(float timer)
     {
-        float currentTime = timer;
+        var currentTime = timer;
         if (currentTime == 0) currentTime = .1f;
         while (currentTime > 0)
         {

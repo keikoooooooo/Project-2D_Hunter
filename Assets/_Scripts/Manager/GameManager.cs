@@ -31,13 +31,15 @@ public class GameManager : SingletonManager<GameManager>
 
 
     #region Private Methods
-    void Start()
+
+    private void Start()
     {
         Initialized();
         LoadData();
         UpdateData();
     }
-    void OnApplicationQuit()
+
+    private void OnApplicationQuit()
     {
         SaveData();
         DataReference.ClearData();
@@ -78,8 +80,7 @@ public class GameManager : SingletonManager<GameManager>
         if(UserData.Power < 200)  powerRecoveryTimeCoroutine = StartCoroutine(IncreasePowerCoroutine());
         isLoadData = true;
 
-        if (UserData.isNewAccount)  LoadingManager.Instance.LoadScene("CutScene");
-        else                        LoadingManager.Instance.LoadScene("MenuGame");
+        LoadingManager.Instance.LoadScene(UserData.isNewAccount ? "CutScene" : "MenuGame");
     }
     public void SaveData()
     {
@@ -132,7 +133,8 @@ public class GameManager : SingletonManager<GameManager>
 
         StartCoroutine(PlayTimeCoroutine());
     }
-    IEnumerator PlayTimeCoroutine()
+
+    private IEnumerator PlayTimeCoroutine()
     {
         while (true)
         {
@@ -151,9 +153,10 @@ public class GameManager : SingletonManager<GameManager>
         if (powerRecoveryTimeCoroutine != null) StopCoroutine(powerRecoveryTimeCoroutine);
         StartCoroutine(IncreasePowerCoroutine());
     }
-    IEnumerator IncreasePowerCoroutine()
+
+    private IEnumerator IncreasePowerCoroutine()
     {
-        int time = 100;
+        var time = 100;
         while (time > 0)
         {
             time -= 1;

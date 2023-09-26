@@ -23,11 +23,12 @@ public class EnemyController : MonoBehaviour, IPool<EnemyController>
     protected Transform slotsVFX;
 
     [Header("Variables")/*Biến kiểm tra điều kiện chung*/]
-    protected bool isAttack = false;   
-    bool isMovingFirst = false;      
-    bool isMovingLast = false;
-    bool isDead = false;
-    bool playerIsDead = false;
+    protected bool isAttack = false;
+
+    private bool isMovingFirst = false;
+    private bool isMovingLast = false;
+    private bool isDead = false;
+    private bool playerIsDead = false;
 
     protected event Action E_AttackSkill;
     protected int level;
@@ -72,13 +73,15 @@ public class EnemyController : MonoBehaviour, IPool<EnemyController>
         if (GameManager.Instance) E_EnemyDie += GameManager.Instance.UpdateDataInBestiary;
         if (KillNotification.Instance) E_EnemyDie += KillNotification.Instance.Notification;
     }
-    void FixedUpdate()
+
+    private void FixedUpdate()
     {
         Move();
         Attack();
     }
     protected virtual void OnDisable() => Initialized();
-    void OnDestroy()
+
+    private void OnDestroy()
     {
         if (player != null)  player.E_Die -= HandlerPlayerDie;
 
@@ -97,7 +100,8 @@ public class EnemyController : MonoBehaviour, IPool<EnemyController>
 
     #region -------------- Public Methods -------------- 
     public void Init(Action<EnemyController> action) => this.action = action; // Tạo 1 event đề khi Enemy dead -> sẽ trả Enemy về lại Pool
-    void Initialized() // Khởi tạo ??
+
+    private void Initialized() // Khởi tạo ??
     {
         if      (countDead <= 1) level = 1;
         else if (countDead <= 2) level = 2;
@@ -111,14 +115,15 @@ public class EnemyController : MonoBehaviour, IPool<EnemyController>
 
 
     // Action
-    void HandlerPlayerDie()
+    private void HandlerPlayerDie()
     {
         playerIsDead = true;
         isAttack = false;
         aiPath.canMove = false;
         enemyAnimation.Idle();
     }
-    void Move() 
+
+    private void Move() 
     {
         if(isDead || playerIsDead)   return;
         Flip();
@@ -133,7 +138,8 @@ public class EnemyController : MonoBehaviour, IPool<EnemyController>
             isMovingFirst = isMovingLast;
         }
     }
-    void Flip()
+
+    private void Flip()
     {
         if (player != null && DistanceToPlayer())
         {
@@ -155,7 +161,8 @@ public class EnemyController : MonoBehaviour, IPool<EnemyController>
             Die();
         }
     }
-    void Die() 
+
+    private void Die() 
     {
         E_EnemyDie?.Invoke(this);
         trackCurrent = null;
@@ -169,7 +176,8 @@ public class EnemyController : MonoBehaviour, IPool<EnemyController>
 
         if (_checkCollisionCoroutine != null) StopCoroutine(_checkCollisionCoroutine);
     }
-    void Attack()
+
+    private void Attack()
     {
         if (isAttack && !isDead && !playerIsDead && trackCurrent == null && !player.isDie)
         {
@@ -180,7 +188,7 @@ public class EnemyController : MonoBehaviour, IPool<EnemyController>
     }
 
 
-    IEnumerator CheckCollision(float timer) // Kiểm tra va chạm với player sau timer (s) 
+    private IEnumerator CheckCollision(float timer) // Kiểm tra va chạm với player sau timer (s) 
     {
         yield return new WaitForSeconds(3f);
         aiPath.canMove = false;
@@ -212,9 +220,10 @@ public class EnemyController : MonoBehaviour, IPool<EnemyController>
 
 
     // Get & Set
-    bool DistanceToPlayer() => player.CompareTag("Player") && 
-            Vector2.Distance(transform.position, player.transform.position) <= Status.rangeAttack + 2;
-    void SetDistance() // set khoảng cách của enemy với player
+    private bool DistanceToPlayer() => player.CompareTag("Player") && 
+                                       Vector2.Distance(transform.position, player.transform.position) <= Status.rangeAttack + 2;
+
+    private void SetDistance() // set khoảng cách của enemy với player
     {
         int radius = 0;
         switch (level)
@@ -234,8 +243,9 @@ public class EnemyController : MonoBehaviour, IPool<EnemyController>
     
 
     // Events
-    void EventsAnimation(TrackEntry trackEntry, Spine.Event e) => E_AttackSkill?.Invoke();// Trigger 1 Event trong animation
-    void CompleteAnimation(TrackEntry trackEntry) // Hoàn thành 1 animation
+    private void EventsAnimation(TrackEntry trackEntry, Spine.Event e) => E_AttackSkill?.Invoke();// Trigger 1 Event trong animation
+
+    private void CompleteAnimation(TrackEntry trackEntry) // Hoàn thành 1 animation
     {
         if (trackEntry.Animation.Name == "Attack")
         {

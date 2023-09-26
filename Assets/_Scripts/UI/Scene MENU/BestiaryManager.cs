@@ -6,29 +6,32 @@ using UnityEngine;
 public class BestiaryManager : MonoBehaviour, IData
 {
     
-    [SerializeField] GameObject panelBestiary;
-    [SerializeField] SkeletonGraphic skeletonGraphic;
-    Spine.AnimationState animationState;
+    [SerializeField] private SkeletonGraphic skeletonGraphic;
+    private Spine.AnimationState animationState;
     [Space(10)]
-    [SerializeField] BoxBestiary boxBestiaryPrefab;
-    [SerializeField] Transform contentSpawn;
-    List<BoxBestiary> boxBestiaryList;
+    [SerializeField]
+    private BoxBestiary boxBestiaryPrefab;
+    [SerializeField] private Transform contentSpawn;
+    private List<BoxBestiary> boxBestiaryList;
 
     private BestiaryData bestiaryData;
-    Coroutine _iconCoroutine;
+    private Coroutine _iconCoroutine;
 
     #region Private Methods
-    void Awake()
+
+    private void Awake()
     {
         Initialization();     
         
     }
-    void OnEnable()
+
+    private void OnEnable()
     {
         DataReference.Register_IData(this);
         _iconCoroutine = StartCoroutine(IconCoroutine());
     }
-    void OnDestroy()
+
+    private void OnDestroy()
     {
         StopCoroutine(_iconCoroutine);
     }
@@ -38,7 +41,8 @@ public class BestiaryManager : MonoBehaviour, IData
 
 
     #region Public Methods
-    void Initialization()
+
+    private void Initialization()
     {
         animationState = skeletonGraphic.AnimationState;
     }
@@ -54,7 +58,8 @@ public class BestiaryManager : MonoBehaviour, IData
             box.UpdateData();
         }
     }
-    void SpawnBoxBestiary()
+
+    private void SpawnBoxBestiary()
     {
         boxBestiaryList = new List<BoxBestiary>();
         foreach (var data in bestiaryData.DataKills)
@@ -64,7 +69,8 @@ public class BestiaryManager : MonoBehaviour, IData
             boxBestiaryList.Add(box);
         }
     }
-    IEnumerator IconCoroutine()
+
+    private IEnumerator IconCoroutine()
     {
         while (true)
         {

@@ -13,18 +13,20 @@ public class TrophyRoadManager : SingletonManager<TrophyRoadManager>, IData
     [Space]
     [SerializeField] GameObject panelTrophy;
     [Space]
-    [SerializeField] ScrollRect scrollRectSpawnBoxtrophy;
-    [SerializeField] Transform contentSpawn;
-    [SerializeField] BoxTrophy boxTrophyPrefab;
-    [SerializeField] GameObject boxEmpty;
+    [SerializeField]
+    private ScrollRect scrollRectSpawnBoxtrophy;
+    [SerializeField] private Transform contentSpawn;
+    [SerializeField] private BoxTrophy boxTrophyPrefab;
+    [SerializeField] private GameObject boxEmpty;
     [Space]
-    [SerializeField] Button bttClaimAll;
+    [SerializeField]
+    private Button bttClaimAll;
 
-    List<BoxTrophy> _boxTrophyList;
-    Dictionary<Sprite, int> rewardDataDic;
+    private List<BoxTrophy> _boxTrophyList;
+    private Dictionary<Sprite, int> rewardDataDic;
 
-    TrophyRoadData _trophyRoadData;
-    bool isSpawnBox = false;
+    private TrophyRoadData _trophyRoadData;
+    private bool isSpawnBox = false;
 
     protected override void Awake()
     {
@@ -46,13 +48,14 @@ public class TrophyRoadManager : SingletonManager<TrophyRoadManager>, IData
         SetStateClaimAllButton();
     }
 
-    void Initialized()
+    private void Initialized()
     {
         DataReference.Register_IData(this);
 
         _boxTrophyList = new List<BoxTrophy>();
     }
-    void SpawnBoxTrophy()
+
+    private void SpawnBoxTrophy()
     {
         if (!isSpawnBox)
         {
@@ -75,7 +78,7 @@ public class TrophyRoadManager : SingletonManager<TrophyRoadManager>, IData
     {
         for (int i = 0; i < _boxTrophyList.Count; i++)
         {
-            BoxTrophy box = _boxTrophyList[i];
+            var box = _boxTrophyList[i];
             box.UpdateData(_trophyRoadData.CurrentTrophyCount);
         }
         SetStateClaimAllButton();
@@ -103,7 +106,8 @@ public class TrophyRoadManager : SingletonManager<TrophyRoadManager>, IData
 
         if(MenuGameManager.Instance) MenuGameManager.Instance.SetNextReward(spriteNextReward, progressValue, valueTrophy);
     }
-    void SetStateClaimAllButton()
+
+    private void SetStateClaimAllButton()
     {
         if (!panelTrophy.activeSelf)
         {
@@ -158,7 +162,8 @@ public class TrophyRoadManager : SingletonManager<TrophyRoadManager>, IData
         UpdateTrophyData();
         SetStateClaimAllButton();
     }
-    void AddDataDictionary(Sprite sprite , int value) 
+
+    private void AddDataDictionary(Sprite sprite , int value) 
     {
         if(sprite == null) return;
 

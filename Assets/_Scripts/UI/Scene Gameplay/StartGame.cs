@@ -2,18 +2,19 @@
 
 public class StartGame : MonoBehaviour
 {
-    Animator animator;
-    CountdownTime countdownTime;
-    PlayerController player;
+    private Animator animator;
+    private CountdownTime countdownTime;
+    private PlayerController player;
 
     public int timer;
 
-    [SerializeField] EndGame endGame;
+    [SerializeField] private EndGame endGame;
     [Space]
-    [SerializeField] GameObject PanelStartGame;
+    [SerializeField]
+    private GameObject PanelStartGame;
 
 
-    void Awake()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         countdownTime = GetComponent<CountdownTime>();
@@ -21,7 +22,8 @@ public class StartGame : MonoBehaviour
         countdownTime.E_EndCountdownTime += EndCooldown;
         countdownTime.E_TimeCount += SetTimer;
     }
-    void OnDisable()
+
+    private void OnDisable()
     {
         if (GamePlayManager.Instance ) 
             GamePlayManager.Instance.E_ActivePlayer -= GetPlaye;

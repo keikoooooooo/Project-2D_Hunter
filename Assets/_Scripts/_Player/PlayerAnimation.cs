@@ -17,7 +17,7 @@ public class PlayerAnimation : MonoBehaviour
     public SkeletonAnimation skeletonAnimation;
     public Spine.AnimationState animationState;
 
-    Vector3 sizeChar;
+    private Vector3 sizeChar;
 
     void Awake() => animationState = skeletonAnimation.AnimationState;
     void Start()

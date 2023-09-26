@@ -11,23 +11,23 @@ public class C_VoidKnight : PlayerController
     [Header("Private Methods ---")]
     [SerializeField] Image fillHold;
 
-    bool _isAttack = false;
-    bool _isAttackHold = false;
+    private bool _isAttack = false;
+    private bool _isAttackHold = false;
 
-    bool _isAttackNormal1 = false;
-    bool _isAttackNormal2 = false;   
-    int _countAttackNormal = 0;
+    private bool _isAttackNormal1 = false;
+    private bool _isAttackNormal2 = false;
+    private int _countAttackNormal = 0;
 
-    float _speedHold;
-    float _speedDrop;
-    int _currentHealth;
+    private float _speedHold;
+    private float _speedDrop;
+    private int _currentHealth;
 
     // phần trăm cộng thêm của các kĩ năng
-    float _percentHeal = 0;
-    float _percentDeathStrike = 0;
-    float _percentLifeSteal = 0;
+    private float _percentHeal = 0;
+    private float _percentDeathStrike = 0;
+    private float _percentLifeSteal = 0;
 
-    TrackEntry _trackEntryHold = null;
+    private TrackEntry _trackEntryHold = null;
 
 
     #region Private Methods
@@ -45,14 +45,16 @@ public class C_VoidKnight : PlayerController
 
         StartCoroutine(base.HealRepeat((int)_percentHeal * _currentHealth, 2));
     }
-    void Update()
+
+    private void Update()
     {
         if (isPaused || isDie) return;
 
         base.InputMove();
         InputAttack();
     }
-    void FixedUpdate() => base.Move(_isAttackHold || _isAttackNormal1 || _isAttackNormal2);
+
+    private void FixedUpdate() => base.Move(_isAttackHold || _isAttackNormal1 || _isAttackNormal2);
     #endregion
 
 
@@ -66,7 +68,8 @@ public class C_VoidKnight : PlayerController
         base.Die();
         fillHold.gameObject.SetActive(false);
     }
-    void InputAttack()
+
+    private void InputAttack()
     {
         if (_isAttackNormal1 || _isAttackNormal2)
             return;
@@ -75,7 +78,8 @@ public class C_VoidKnight : PlayerController
         AttackDrop();
         AttackNormal();
     }
-    void AttackHold()
+
+    private void AttackHold()
     {
         if (_isAttack) return;
         if (Input.GetMouseButtonDown(0))
@@ -90,7 +94,8 @@ public class C_VoidKnight : PlayerController
             base.Status.moveSpeed = _speedHold;
         }
     }
-    void AttackDrop()
+
+    private void AttackDrop()
     {
         if (!_isAttackHold) return;
         if (Input.GetMouseButtonUp(0) && _trackEntryHold != null)
@@ -102,7 +107,8 @@ public class C_VoidKnight : PlayerController
             _trackEntryHold = null;
         }
     }
-    void AttackNormal()
+
+    private void AttackNormal()
     {
         if (Input.GetMouseButtonDown(1))
         {
@@ -170,7 +176,8 @@ public class C_VoidKnight : PlayerController
                 break;
         }
     }
-    void Attack(int dmg)
+
+    private void Attack(int dmg)
     {
         var hits = RaycastMuilt();
 
@@ -186,7 +193,8 @@ public class C_VoidKnight : PlayerController
             e.TakeDamage(dmg);
         }
     }
-    void Steal(EnemyController e)
+
+    private void Steal(EnemyController e)
     {
         float randHeal = Random.value;
         float enemyHealth = e.Status.maxHealth * 0.2f;   // lấy số máu tối đa của enemy vừa va chạm

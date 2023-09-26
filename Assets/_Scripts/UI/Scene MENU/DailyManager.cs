@@ -5,37 +5,39 @@ using Random = UnityEngine.Random;
 
 public class DailyManager : MonoBehaviour, IData
 {
-    [SerializeField] ButtonClaimReward bttDay1;
-    [SerializeField] ButtonClaimReward bttDay2;
-    [SerializeField] ButtonClaimReward bttDay3;
-    [SerializeField] ButtonClaimReward bttDay4;
-    [SerializeField] ButtonClaimReward bttDay5;
-    [SerializeField] ButtonClaimReward bttDay6;
-    [SerializeField] ButtonClaimReward bttDay7;
-    [SerializeField] GameObject[] notifeBtt;
+    [SerializeField] private ButtonClaimReward bttDay1;
+    [SerializeField] private ButtonClaimReward bttDay2;
+    [SerializeField] private ButtonClaimReward bttDay3;
+    [SerializeField] private ButtonClaimReward bttDay4;
+    [SerializeField] private ButtonClaimReward bttDay5;
+    [SerializeField] private ButtonClaimReward bttDay6;
+    [SerializeField] private ButtonClaimReward bttDay7;
+    [SerializeField] private GameObject[] notifeBtt;
     [Space]
     [SerializeField] Sprite spriteCoin;
     [SerializeField] Sprite spriteGem;
 
-    List<Sprite> spriteOther = new List<Sprite>();
-    List<int> valueOther = new List<int>();
+    private readonly List<Sprite> spriteOther = new List<Sprite>();
+    private readonly List<int> valueOther = new List<int>();
 
-    DailyData _dailyData;
+    private DailyData _dailyData;
 
-    DateTime resetTime;
-    DateTime currentTime;
-    TimeSpan timeThrough;   // thời gian đã trôi qua (giây)
+    private DateTime resetTime;
+    private DateTime currentTime;
+    private TimeSpan timeThrough;   // thời gian đã trôi qua (giây)
 
-    void Awake()
+    private void Awake()
     {
         DataReference.Register_IData(this);
     }
-    void Start()
+
+    private void Start()
     {
         Initialized();
         RegisterEvent();
     }
-    void OnDestroy()
+
+    private void OnDestroy()
     {
         UnRegisterEvent();
     }
@@ -60,7 +62,8 @@ public class DailyManager : MonoBehaviour, IData
         }
         SetStateButton();
     }
-    void Initialized()
+
+    private void Initialized()
     {
         bttDay1.bttClaim.interactable = false;
         bttDay2.bttClaim.interactable = false;
@@ -75,7 +78,8 @@ public class DailyManager : MonoBehaviour, IData
             obj.SetActive(false);
         }
     }
-    void RegisterEvent()
+
+    private void RegisterEvent()
     {
         bttDay1.bttClaim.onClick.AddListener(OnClickDay1Button);
         bttDay2.bttClaim.onClick.AddListener(OnClickDay2Button);
@@ -86,7 +90,8 @@ public class DailyManager : MonoBehaviour, IData
         bttDay7.bttClaim.onClick.AddListener(OnClickDay7Button);
 
     }
-    void UnRegisterEvent()
+
+    private void UnRegisterEvent()
     {
         bttDay1.bttClaim.onClick.RemoveListener(OnClickDay1Button);
         bttDay2.bttClaim.onClick.RemoveListener(OnClickDay2Button);
@@ -97,14 +102,15 @@ public class DailyManager : MonoBehaviour, IData
         bttDay7.bttClaim.onClick.RemoveListener(OnClickDay7Button);
     }
 
-    void FindTime() // tìm thời gian và check đã qua 0h đêm chưa?
+    private void FindTime() // tìm thời gian và check đã qua 0h đêm chưa?
     {
         resetTime = DateTime.Parse(_dailyData.ResetTime);
         currentTime = DateTime.Now;
 
         timeThrough = currentTime - resetTime;
     }
-    void SetStateButton()
+
+    private void SetStateButton()
     {
         switch (_dailyData.DayCurrent)
         {

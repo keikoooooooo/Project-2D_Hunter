@@ -5,37 +5,37 @@ using UnityEngine.UI;
 
 public class SettingsGameplay : MonoBehaviour
 {
-    SettingsData _settingData;
-    Animator animator;
-    [SerializeField] LeanLocalization _localization;
+    private SettingsData _settingData;
+    private Animator animator;
+    [SerializeField] private LeanLocalization _localization;
     [Space]
-    [SerializeField] EndGame endGame;
-    [SerializeField] GameObject panelSettings;
+    [SerializeField] private EndGame endGame;
+    [SerializeField] private GameObject panelSettings;
     [Space]
-    [SerializeField] Button bttCameraResizeLeft;
-    [SerializeField] Button bttCameraResizeRight;
-    [SerializeField] TextMeshProUGUI textValueCameraResize;
+    [SerializeField] private Button bttCameraResizeLeft;
+    [SerializeField] private Button bttCameraResizeRight;
+    [SerializeField] private TextMeshProUGUI textValueCameraResize;
     [Space]
-    [SerializeField] Button bttSoundFx;
-    [SerializeField] Button bttMusic;
+    [SerializeField] private Button bttSoundFx;
+    [SerializeField] private Button bttMusic;
     [Space]
-    [SerializeField] Slider sliderSoundFx;
-    [SerializeField] Slider sliderMusic;
+    [SerializeField] private Slider sliderSoundFx;
+    [SerializeField] private Slider sliderMusic;
     [Space]
-    [SerializeField] Image iconSoundFx;
-    [SerializeField] Image iconMusic;
-    [SerializeField] Sprite[] spriteSoundIcon;
-    [SerializeField] Sprite[] spriteMusicIcon;
+    [SerializeField] private Image iconSoundFx;
+    [SerializeField] private Image iconMusic;
+    [SerializeField] private Sprite[] spriteSoundIcon;
+    [SerializeField] private Sprite[] spriteMusicIcon;
     [Space]
-    [SerializeField] Button bttOnShowRange;
-    [SerializeField] Button bttOffShowRange;
+    [SerializeField] private Button bttOnShowRange;
+    [SerializeField] private Button bttOffShowRange;
     [Space]
-    [SerializeField] Button bttLeaveGame;
+    [SerializeField] private Button bttLeaveGame;
     [Space]
-    [SerializeField] Button bttOtherGame;
-    [SerializeField] Button bttCredits;
-    [SerializeField] Button bttSupport;
-    [SerializeField] Button bttHelp;
+    [SerializeField] private Button bttOtherGame;
+    [SerializeField] private Button bttCredits;
+    [SerializeField] private Button bttSupport;
+    [SerializeField] private Button bttHelp;
 
     private readonly int CodeSettingIN  = Animator.StringToHash("Setting_IN");// code chạy animation
     private readonly int CodeSettingOUT = Animator.StringToHash("Setting_OUT");
@@ -45,25 +45,30 @@ public class SettingsGameplay : MonoBehaviour
 
 
     #region Private Methods
-    void Awake()
+
+    private void Awake()
     {
         Initialized();
     }
-    void OnEnable()
+
+    private void OnEnable()
     {
         SubscribeEvent();
     }
-    void Start()
+
+    private void Start()
     {
         LoadData();
         panelSettings.SetActive(false);
         _localization.SetCurrentLanguage(_settingData.LanguegeName);
     }
-    void OnDestroy()
+
+    private void OnDestroy()
     {
         UnSubscribeEvent();
     }
-    void Update()
+
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {

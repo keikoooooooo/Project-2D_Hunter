@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 public class NotEnough : SingletonManager<NotEnough>
 {
-    [SerializeField] TextMeshProUGUI text;
-    [SerializeField] Animator animator;
+    [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private Animator animator;
 
-    Image panel;
+    private Image panel;
 
-    int codeAnimator = Animator.StringToHash("NotEnough");
+    readonly int codeAnimator = Animator.StringToHash("NotEnough");
 
     private void Start()
     {

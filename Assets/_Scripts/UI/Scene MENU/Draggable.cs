@@ -7,20 +7,21 @@ public class Draggable : MonoBehaviour, IDragHandler
     Vector2 minPosition;
     Vector2 maxPosition;
 
-    void Awake()
+    private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
     }
-    void OnEnable()
+
+    private void OnEnable()
     {
         rectTransform.anchoredPosition = Vector3.zero;
         CalculateDragLimits();
     }
 
-    void CalculateDragLimits()
+    private void CalculateDragLimits()
     {
-        RectTransform canvasRect = rectTransform.root.GetComponent<RectTransform>();
-        Vector3[] canvasCorners = new Vector3[4];
+        var canvasRect = rectTransform.root.GetComponent<RectTransform>();
+        var canvasCorners = new Vector3[4];
         canvasRect.GetWorldCorners(canvasCorners);
 
         Vector2 minCanvasPos = canvasRect.InverseTransformPoint(canvasCorners[0]);

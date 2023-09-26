@@ -14,7 +14,7 @@ public class CutSceneHealthRecovery : MonoBehaviour
     bool isHeal = false;
     CutScenePlayer player;
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.TryGetComponent<CutScenePlayer>(out var player)) return;
         E_TriggerPlayer?.Invoke();
@@ -23,13 +23,14 @@ public class CutSceneHealthRecovery : MonoBehaviour
         this.player = player;
         StartCoroutine(HealPlayer());
     }
-    void OnTriggerExit2D(Collider2D other)
+
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (!other.TryGetComponent<CutScenePlayer>(out var player)) return;
         isHeal = false;
     }
 
-    IEnumerator HealPlayer()
+    private IEnumerator HealPlayer()
     {
         while (isHeal && player != null)
         {

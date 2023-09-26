@@ -8,47 +8,52 @@ using Random = UnityEngine.Random;
 public class ShopManager : MonoBehaviour, IData
 {
     [Header("Reference")]
-    [SerializeField] GameObject panelShop;
+    [SerializeField]
+    private GameObject panelShop;
     [Space]
-    [SerializeField] TextMeshProUGUI textCoin;
-    [SerializeField] TextMeshProUGUI textGem;
-    [SerializeField] Animator animatorCoin;
-    [SerializeField] Animator animatorGem;
+    [SerializeField]
+    private TextMeshProUGUI textCoin;
+    [SerializeField] private TextMeshProUGUI textGem;
+    [SerializeField] private Animator animatorCoin;
+    [SerializeField] private Animator animatorGem;
 
-    static readonly int coinCodeAnim = Animator.StringToHash("CoinBar");
-    static readonly int gemCodeAnim = Animator.StringToHash("GemBar");
+    private static readonly int coinCodeAnim = Animator.StringToHash("CoinBar");
+    private static readonly int gemCodeAnim = Animator.StringToHash("GemBar");
 
     [Space]
-    [SerializeField] RectTransform rectTransformContent;
+    [SerializeField]
+    private RectTransform rectTransformContent;
     [Space]
-    [SerializeField] List<ButtonClaimReward> buttonClaimDaily;
-    [SerializeField] List<ButtonClaimReward> buttonClaimCoin;
-    [SerializeField] List<ButtonClaimReward> buttonClaimGem;
+    [SerializeField]
+    private List<ButtonClaimReward> buttonClaimDaily;
+    [SerializeField] private List<ButtonClaimReward> buttonClaimCoin;
+    [SerializeField] private List<ButtonClaimReward> buttonClaimGem;
 
-    List<PlayerController> _playersUnlock;
-    List<PlayerController> _playersNonUnlock;
+    private List<PlayerController> _playersUnlock;
+    private List<PlayerController> _playersNonUnlock;
 
-    PlayerController playerController;
+    private PlayerController playerController;
 
-    ShopData _shopData;
-    UserData _userData;
+    private ShopData _shopData;
+    private UserData _userData;
 
-    DateTime resetTime;
-    DateTime currentTime;
-    long timeThrough;   // thời gian đã trôi qua (giây)
+    private DateTime resetTime;
+    private DateTime currentTime;
+    private long timeThrough;   // thời gian đã trôi qua (giây)
 
-    void Awake() => Initialized();
-    void OnEnable() => RegisterEvent();
-    void OnDisable() => UnRegisterEvent();
+    private void Awake() => Initialized();
+    private void OnEnable() => RegisterEvent();
+    private void OnDisable() => UnRegisterEvent();
 
-   
-    void Initialized()
+
+    private void Initialized()
     {
         DataReference.Register_IData(this);
         _playersUnlock = new List<PlayerController>();
         _playersNonUnlock = new List<PlayerController>();
     }
-    void RegisterEvent()
+
+    private void RegisterEvent()
     {
         buttonClaimDaily[0].bttClaim.onClick.AddListener(OnClickFreeCoinButton);
         buttonClaimDaily[1].bttClaim.onClick.AddListener(OnClickBuyPowerButton);
@@ -63,7 +68,8 @@ public class ShopManager : MonoBehaviour, IData
         buttonClaimCoin[1].bttClaim.onClick.AddListener(OnClickCoinOption2Button);
         buttonClaimCoin[2].bttClaim.onClick.AddListener(OnClickCoinOption3Button);
     }
-    void UnRegisterEvent()
+
+    private void UnRegisterEvent()
     {
         buttonClaimDaily[0].bttClaim.onClick.RemoveListener(OnClickFreeCoinButton);
         buttonClaimDaily[1].bttClaim.onClick.RemoveListener(OnClickBuyPowerButton);
@@ -138,7 +144,7 @@ public class ShopManager : MonoBehaviour, IData
         buttonClaimDaily[3].icon.sprite = inforCurrent.Skins[0].Sprite;
     }
 
-    void FindTime() // tìm thời gian và check đã qua 0h đêm chưa?
+    private void FindTime() // tìm thời gian và check đã qua 0h đêm chưa?
     {
         resetTime = DateTime.Parse(_shopData.ResetTime);
         currentTime = DateTime.Now;
@@ -146,13 +152,14 @@ public class ShopManager : MonoBehaviour, IData
         TimeSpan time = resetTime - currentTime;
         timeThrough = (long)time.TotalSeconds;
     }
-    void SetText()
+
+    private void SetText()
     {
         textCoin.text = $"{_userData.Coin}";
         textGem.text = $"{_userData.Gem}";
     }
 
-    void SetStateClaimFreeCoinButton() // set trạng thái của button 
+    private void SetStateClaimFreeCoinButton() // set trạng thái của button 
     {
         if (_shopData.IsFreeCoinClaim)
         {
@@ -165,7 +172,8 @@ public class ShopManager : MonoBehaviour, IData
                 countdownTime.StartCountDown((int)timeThrough);
         }
     }
-    void SetStateBuyPowerButton()
+
+    private void SetStateBuyPowerButton()
     {
         if (_shopData.CountBuyPower > 0)
         {
@@ -178,7 +186,8 @@ public class ShopManager : MonoBehaviour, IData
                 countdownTime.StartCountDown((int)timeThrough);
         }
     }
-    void SetStateBuyUpgradePointButton()
+
+    private void SetStateBuyUpgradePointButton()
     {
         if (_shopData.IsBuyUpgradePoint)
         {

@@ -6,28 +6,29 @@ using UnityEngine.UI;
 
 public class EndGame : MonoBehaviour
 {
-    Animator animator;
-    [SerializeField] StartGame startGame;
+    private Animator animator;
+    [SerializeField] private StartGame startGame;
     [Space]
-    [SerializeField] SkeletonGraphic skeletonGraphic;
+    [SerializeField] private SkeletonGraphic skeletonGraphic;
     [Space]
-    [SerializeField] GameObject panelEnd;
-    [SerializeField] GameObject Win;
-    [SerializeField] GameObject Lose;
+    [SerializeField] private GameObject panelEnd;
+    [SerializeField] private GameObject Win;
+    [SerializeField] private GameObject Lose;
     [Space]
-    [SerializeField] TextMeshProUGUI textTrophy;
-    [SerializeField] TextMeshProUGUI textKilled;
-    [SerializeField] TextMeshProUGUI textCoin;
-    [SerializeField] TextMeshProUGUI textToken;
+    [SerializeField] private TextMeshProUGUI textTrophy;
+    [SerializeField] private TextMeshProUGUI textKilled;
+    [SerializeField] private TextMeshProUGUI textCoin;
+    [SerializeField] private TextMeshProUGUI textToken;
     [Space]
-    [SerializeField] SkeletonGraphic skeletonGraphicLeft;
-    [SerializeField] SkeletonGraphic skeletonGraphicRight;
+    [SerializeField] private SkeletonGraphic skeletonGraphicLeft;
+    [SerializeField] private SkeletonGraphic skeletonGraphicRight;
     [Space]
-    [SerializeField] Button bttClaimX2;
-    [SerializeField] Button bttExit;
+    [SerializeField] private Button bttClaimX2;
+    [SerializeField] private Button bttExit;
 
     #region Private
-    void Start()
+
+    private void Start()
     {
         animator = GetComponent<Animator>();
         panelEnd.SetActive(false);
@@ -36,7 +37,8 @@ public class EndGame : MonoBehaviour
         bttClaimX2.onClick.AddListener(OnClickClaimButton);
         bttExit.onClick.AddListener(OnClickExitButton);
     }
-    void OnDestroy()
+
+    private void OnDestroy()
     {
         if (GamePlayManager.Instance) GamePlayManager.Instance.player.E_EndAnimationDie -= HandlerPlayerDie;
         bttClaimX2.onClick.RemoveListener(OnClickClaimButton);
@@ -78,7 +80,8 @@ public class EndGame : MonoBehaviour
         }
         SetText(isState);
     }
-    void SetSkeleton()
+
+    private void SetSkeleton()
     {
         skeletonGraphic.skeletonDataAsset = GamePlayManager.Instance.player.PlayerAnimation.skeletonAnimation.skeletonDataAsset;
         skeletonGraphic.initialSkinName = $"V{GamePlayManager.Instance.LastUsedCharacterSkin}";
@@ -86,7 +89,8 @@ public class EndGame : MonoBehaviour
     }
 
     int trophy, coin, token, killed;
-    void SetText(bool isState)
+
+    private void SetText(bool isState)
     {
         trophy = 0; coin = 0; token = 0; killed = 0;
 

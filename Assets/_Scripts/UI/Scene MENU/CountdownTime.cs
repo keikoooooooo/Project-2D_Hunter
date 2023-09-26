@@ -11,7 +11,7 @@ public class CountdownTime : MonoBehaviour
     public GameObject panelCountdown;
     [SerializeField] TextMeshProUGUI textTime;
 
-    [SerializeField] int CountTime;
+    [SerializeField] private int CountTime;
     public int _countTime { get; private set; }
 
 
@@ -21,9 +21,9 @@ public class CountdownTime : MonoBehaviour
     public bool Format2;
 
 
+    private Coroutine countdownTimeCoroutine;
 
-    Coroutine countdownTimeCoroutine;
-    IEnumerator CountdownCoroutine()
+    private IEnumerator CountdownCoroutine()
     {
         _countTime = CountTime;
         while (_countTime >= 0)

@@ -7,27 +7,30 @@ public class ProfileManager : SingletonManager<ProfileManager>, IData
 {
     public Image avatar;
     [SerializeField] TMP_InputField inputField;
-    [SerializeField] Button bttNameColor;
+    [SerializeField] private Button bttNameColor;
     [SerializeField] TextMeshProUGUI textNameColor;
     [Space]
-    [SerializeField] TextMeshProUGUI textTrophy;
-    [SerializeField] TextMeshProUGUI textCharacter;
-    [SerializeField] TextMeshProUGUI textPlayingTime;
-    [SerializeField] TextMeshProUGUI textTotalPlay;
+    [SerializeField]
+    private TextMeshProUGUI textTrophy;
+    [SerializeField] private TextMeshProUGUI textCharacter;
+    [SerializeField] private TextMeshProUGUI textPlayingTime;
+    [SerializeField] private TextMeshProUGUI textTotalPlay;
     [Space]
-    [SerializeField] GameObject panelNameColor;
-    [SerializeField] Transform contentSpawnBoxColor;
-    [SerializeField] BoxNameColor boxNameColorPrefab;
-    List<BoxNameColor> boxNameColorList;
+    [SerializeField]
+    private GameObject panelNameColor;
+    [SerializeField] private Transform contentSpawnBoxColor;
+    [SerializeField] private BoxNameColor boxNameColorPrefab;
+    private List<BoxNameColor> boxNameColorList;
     [Space]
-    [SerializeField] GameObject panelAvatar;
-    [SerializeField] Sprite[] avatarList;
-    [SerializeField] Transform contentSpawnBoxAvatar;
+    [SerializeField]
+    private GameObject panelAvatar;
+    [SerializeField] private Sprite[] avatarList;
+    [SerializeField] private Transform contentSpawnBoxAvatar;
     [SerializeField] BoxAvatarUser boxAvatarUserPrefab;
-    List<BoxAvatarUser> boxAvatarUserList;
+    private List<BoxAvatarUser> boxAvatarUserList;
 
 
-    UserData _userData;
+    private UserData _userData;
 
 
     #region Private Methods

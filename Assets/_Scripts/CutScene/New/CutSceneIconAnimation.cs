@@ -11,41 +11,42 @@ public class CutSceneIconAnimation : MonoBehaviour
     [SerializeField] GameObject panelTextLeft;
     [SerializeField] GameObject panelTextRight;
     [SerializeField] Animator animatorText;
-    readonly int CodeAnimTextMove = Animator.StringToHash("ClickKeyTextMove");
-    readonly int CodeAnimTextAttackL = Animator.StringToHash("ClickKeyTextAttackL");
-    readonly int CodeAnimTextAttackR = Animator.StringToHash("ClickKeyTextAttackR");
-    readonly int CodeAnimTextGreat = Animator.StringToHash("ClickKeyTextGreat");
-    readonly int CodeAnimTextSelectAbi = Animator.StringToHash("ClickKeyTextSelectAbi");
+    private readonly int CodeAnimTextMove = Animator.StringToHash("ClickKeyTextMove");
+    private readonly int CodeAnimTextAttackL = Animator.StringToHash("ClickKeyTextAttackL");
+    private readonly int CodeAnimTextAttackR = Animator.StringToHash("ClickKeyTextAttackR");
+    private readonly int CodeAnimTextGreat = Animator.StringToHash("ClickKeyTextGreat");
+    private readonly int CodeAnimTextSelectAbi = Animator.StringToHash("ClickKeyTextSelectAbi");
 
-    Animator animatorIcon;
-    readonly int CodeAnimIconDefault = Animator.StringToHash("Icon_Default");
-    readonly int CodeAnimIcon1 = Animator.StringToHash("Icon_1");
-    readonly int CodeAnimIconA = Animator.StringToHash("Icon_A");
-    readonly int CodeAnimIconD = Animator.StringToHash("Icon_D");
-    readonly int CodeAnimIconS = Animator.StringToHash("Icon_S");
-    readonly int CodeAnimIconW = Animator.StringToHash("Icon_W");
-    readonly int CodeAnimIconAW = Animator.StringToHash("Icon_AW");
-    readonly int CodeAnimIconWD = Animator.StringToHash("Icon_WD");
-    readonly int CodeAnimIconAS = Animator.StringToHash("Icon_AS");
-    readonly int CodeAnimIconSD = Animator.StringToHash("Icon_SD");
-    readonly int CodeAnimIconMouseL = Animator.StringToHash("Icon_MouseL");
-    readonly int CodeAnimIconMouseR = Animator.StringToHash("Icon_MouseR");
+    private Animator animatorIcon;
+    private readonly int CodeAnimIconDefault = Animator.StringToHash("Icon_Default");
+    private readonly int CodeAnimIcon1 = Animator.StringToHash("Icon_1");
+    private readonly int CodeAnimIconA = Animator.StringToHash("Icon_A");
+    private readonly int CodeAnimIconD = Animator.StringToHash("Icon_D");
+    private readonly int CodeAnimIconS = Animator.StringToHash("Icon_S");
+    private readonly int CodeAnimIconW = Animator.StringToHash("Icon_W");
+    private readonly int CodeAnimIconAW = Animator.StringToHash("Icon_AW");
+    private readonly int CodeAnimIconWD = Animator.StringToHash("Icon_WD");
+    private readonly int CodeAnimIconAS = Animator.StringToHash("Icon_AS");
+    private readonly int CodeAnimIconSD = Animator.StringToHash("Icon_SD");
+    private readonly int CodeAnimIconMouseL = Animator.StringToHash("Icon_MouseL");
+    private readonly int CodeAnimIconMouseR = Animator.StringToHash("Icon_MouseR");
 
-    bool isA, isW, isD, isS;
-    bool isClickAttackLeft, isClickAttackRight;
-    bool isClickAccpect;
+    private bool isA, isW, isD, isS;
+    private bool isClickAttackLeft, isClickAttackRight;
+    private bool isClickAccpect;
 
-    void Awake()
+    private void Awake()
     {
         animatorIcon = GetComponent<Animator>();
     }
-    void Start()
+
+    private void Start()
     {
         animatorIcon.Play(CodeAnimIconW);
         animatorText.Play(CodeAnimTextMove);
     }
 
-    void Update()
+    private void Update()
     {
         if (isW && isA && isD && isS && isClickAccpect && isClickAttackLeft && isClickAttackRight) return;
 
@@ -99,7 +100,7 @@ public class CutSceneIconAnimation : MonoBehaviour
     }
 
 
-    void DisablePanelAllText()
+    private void DisablePanelAllText()
     {
         panelAll.SetActive(false);
         animatorIcon.Play(CodeAnimIconW);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 [Serializable]
 public class TrophyRoadData
@@ -14,10 +15,10 @@ public class TrophyRoadData
         CurrentTrophyCount = 0;
         TrophyRoadList = new List<TrophyRoad>();
 
-        int minRequirementData = 0;
-        string[] requirementData = _requirementData.text.Split('\n');
-        string[] rewardsData = _rewardsData.text.Split('\n');
-        string[] rewardNames = _rewardNames.text.Split('\n');
+        var minRequirementData = 0;
+        var requirementData = _requirementData.text.Split('\n');
+        var rewardsData = _rewardsData.text.Split('\n');
+        var rewardNames = _rewardNames.text.Split('\n');
 
         for (int i = 0; i < requirementData.Length; i++)
         {
@@ -34,15 +35,12 @@ public class TrophyRoadData
     public void IncreaseTrophy(int value) // tăng cúp
     {
         CurrentTrophyCount += value;
-        foreach (var trophy in TrophyRoadList)
+        foreach (var trophy in TrophyRoadList.Where(trophy => CurrentTrophyCount >= trophy.MaxTrophyValue && !trophy.HasReward))
         {
-            if(CurrentTrophyCount >= trophy.MaxTrophyValue && !trophy.HasReward)
+            trophy.HasReward = true;
+            if(CurrentTrophyCount < trophy.MaxTrophyValue)
             {
-                trophy.HasReward = true;
-                if(CurrentTrophyCount < trophy.MaxTrophyValue)
-                {
-                    return;
-                }
+                return;
             }
         }
     }

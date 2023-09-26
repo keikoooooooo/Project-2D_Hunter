@@ -2,19 +2,18 @@ using UnityEngine;
 
 public class DamageImageFeedback : MonoBehaviour
 {
-    
-    Animator animator;
-    readonly int _codeAnim = Animator.StringToHash("DamageImage");
-    PlayerController player;
+    private Animator animator;
+    private readonly int _codeAnim = Animator.StringToHash("DamageImage");
+    private PlayerController player;
 
 
-    void Awake()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         GamePlayManager.Instance.E_ActivePlayer += GetPlayer;
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         if (GamePlayManager.Instance)
             GamePlayManager.Instance.E_ActivePlayer -= GetPlayer;
@@ -22,13 +21,13 @@ public class DamageImageFeedback : MonoBehaviour
             player.E_TakeDamage -= SetAnim;
     }
 
-    void GetPlayer(PlayerController p)
+    private void GetPlayer(PlayerController p)
     {
         player = p;
         player.E_TakeDamage += SetAnim;
     }
 
-    void SetAnim() => animator.Play(_codeAnim);
+    private void SetAnim() => animator.Play(_codeAnim);
 
 
 

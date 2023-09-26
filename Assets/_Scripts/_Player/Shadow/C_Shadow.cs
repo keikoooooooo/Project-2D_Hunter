@@ -24,12 +24,8 @@ public class C_Shadow : PlayerController
 
         Initialized();
     }
-    protected override void Start()
-    {
-        base.Start();
 
-    }
-    void Update()
+    private void Update()
     {
         if (base.isPaused || base.isDie) return;
 
@@ -37,7 +33,8 @@ public class C_Shadow : PlayerController
         InputAttack();
 
     }
-    void FixedUpdate()
+
+    private void FixedUpdate()
     {
         base.Move(_isAttack);
     }
@@ -46,18 +43,21 @@ public class C_Shadow : PlayerController
 
 
     #region Public Methods
-    void Initialized()
+
+    private void Initialized()
     {
         slots = PlayerAnimation.skeletonAnimation.skeleton.Slots; // lấy toàn bộ slot trong spine -> setcolor
 
         boxCollider = GetComponent<BoxCollider2D>();
     }
-    void InputAttack()
+
+    private void InputAttack()
     {
         AttackSpecial();
         AttackNormal();
     }
-    void AttackSpecial()
+
+    private void AttackSpecial()
     {
         if (_isAttackHold) return;
 
@@ -67,7 +67,8 @@ public class C_Shadow : PlayerController
             _isAttackHold = true;
         }
     }
-    void AttackNormal()
+
+    private void AttackNormal()
     {
         if (_isAttack) return;
 
@@ -79,7 +80,7 @@ public class C_Shadow : PlayerController
         }
     }
 
-    void Invisible(float amount) // giảm opacity => vô hình
+    private void Invisible(float amount) // giảm opacity => vô hình
     {
         foreach (Slot slot in slots)
         {
@@ -129,7 +130,8 @@ public class C_Shadow : PlayerController
             Attack();
         }
     }
-    void Attack()
+
+    private void Attack()
     {
         var hits = base.RaycastMuilt();
         if (hits != null)
@@ -148,7 +150,8 @@ public class C_Shadow : PlayerController
             }
         }
     }
-    void Steal(EnemyController e)
+
+    private void Steal(EnemyController e)
     {
         float randHeal = Random.value;
         int enemyHealth = e.Status.maxHealth;   // lấy số máu tối đa của enemy vừa va chạm
@@ -195,16 +198,19 @@ public class C_Shadow : PlayerController
                 break;
         }
     }
-    void Abi_DemonPact(float value1, float value2)
+
+    private void Abi_DemonPact(float value1, float value2)
     {
         base.Abi_Damage(value1, Mode.Increase);
         base.Abi_Health(value2, Mode.Subtract);
     }
-    void Abi_DeathStrike(float value)
+
+    private void Abi_DeathStrike(float value)
     {
         _percentDeathStrike += value;
     }
-    void Abi_LifeSteal(float value)
+
+    private void Abi_LifeSteal(float value)
     {
         _percentLifeSteal += value;
     }   

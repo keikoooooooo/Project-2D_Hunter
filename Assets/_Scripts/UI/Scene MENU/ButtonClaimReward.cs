@@ -6,7 +6,7 @@ public class ButtonClaimReward : MonoBehaviour
 {
     public Button bttClaim;
     public Image icon;
-    int value;
+    private int value;
 
 
     public void SetState(Sprite sprite, int val)

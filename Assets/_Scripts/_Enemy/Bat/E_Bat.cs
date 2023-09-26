@@ -4,14 +4,10 @@ public class E_Bat : EnemyController
 {
     [Header("----- Private Methods -----")]
     [Space]
-    [SerializeField] Transform posSkill;
+    [SerializeField]
+    private Transform posSkill;
 
-
-
-    //protected override void Start()
-    //{
-    //    base.Start();
-    //}
+    
     protected override void OnDisable()
     {
         base.OnDisable();
@@ -20,17 +16,18 @@ public class E_Bat : EnemyController
     }
 
 
-    void SubscribeEvent() // đăng kí sự kiện theo level
+    private void SubscribeEvent() // đăng kí sự kiện theo level
     {
         base.E_AttackSkill += OnSkill;
     }
-    void UnSubscribeEvent() // hủy kí sự kiện theo level
+
+    private void UnSubscribeEvent() // hủy kí sự kiện theo level
     {
         base.E_AttackSkill -= OnSkill;
     }
 
 
-    void OnSkill()
+    private void OnSkill()
     {
         var hit = Raycast(posSkill);
         if(hit != null && hit.TryGetComponent<PlayerController>(out var player))

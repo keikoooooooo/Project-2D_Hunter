@@ -6,30 +6,34 @@ using UnityEngine.UI;
 
 public class CharactersManager : SingletonManager<CharactersManager>, IData
 {
-    [SerializeField] CharacterSelectManager CharacterSelectManager;
-    [SerializeField] GameObject PanelCharacters;
+    [SerializeField] private CharacterSelectManager CharacterSelectManager;
+    [SerializeField] private GameObject PanelCharacters;
 
     [Space]
-    [SerializeField] TextMeshProUGUI textNumberOfCharacter;
+    [SerializeField]
+    private TextMeshProUGUI textNumberOfCharacter;
 
     [Space]
-    [SerializeField] Button bttSortbyLevel;     // button sắp xếp theo: ?? 
-    [SerializeField] Button bttSortbyDamage;
-    [SerializeField] Button bttSortbyRarity;
+    [SerializeField]
+    private Button bttSortbyLevel;     // button sắp xếp theo: ?? 
+    [SerializeField] private Button bttSortbyDamage;
+    [SerializeField] private Button bttSortbyRarity;
 
     [Space]
-    [SerializeField] AvatarFrame cafPrefab; // khung avartar hiển thị thông tn character
-    [SerializeField] AvaterFrame_None caf_NonePrefab;
+    [SerializeField]
+    private AvatarFrame cafPrefab; // khung avartar hiển thị thông tn character
+    [SerializeField] private AvaterFrame_None caf_NonePrefab;
 
-    [SerializeField] Transform contentsCaf;     // spawn avartar vào đây
-    [SerializeField] Transform contentsCafNone;
+    [SerializeField] private Transform contentsCaf;     // spawn avartar vào đây
+    [SerializeField] private Transform contentsCafNone;
 
     [Space]
-    [SerializeField] TextMeshProUGUI textUnlockedCharacterCount;
-    [SerializeField] TextMeshProUGUI textLockedCharacterCount;
+    [SerializeField]
+    private TextMeshProUGUI textUnlockedCharacterCount;
+    [SerializeField] private TextMeshProUGUI textLockedCharacterCount;
 
-    ObjectPool<AvatarFrame> avaterFramePool;    // pool
-    ObjectPool<AvaterFrame_None> avaterFrameNonePool;
+    private ObjectPool<AvatarFrame> avaterFramePool;    // pool
+    private ObjectPool<AvaterFrame_None> avaterFrameNonePool;
 
     List<PlayerController> _ControllersList; // tất cả dữ liệu của người chơi. -> được lấy từ GameManager
 
@@ -40,11 +44,11 @@ public class CharactersManager : SingletonManager<CharactersManager>, IData
     private bool isSortDamage = false;
     private bool isSortRarity = false;
 
-    float ValueScaleArrowIcon;
+    private float ValueScaleArrowIcon;
     [SerializeField] List<GameObject> ArrowSortButtonList;
 
 
-    void OnEnable()
+    private void OnEnable()
     {
         Initialized();
 
@@ -54,7 +58,8 @@ public class CharactersManager : SingletonManager<CharactersManager>, IData
         bttSortbyDamage.onClick.AddListener(OnClickSortByDamageButton);
         bttSortbyRarity.onClick.AddListener(OnClickSortByRarityButton);
     }
-    void OnDestroy()
+
+    private void OnDestroy()
     {
         bttSortbyLevel.onClick.RemoveListener(OnClickSortByLevelButton);
         bttSortbyDamage.onClick.RemoveListener(OnClickSortByDamageButton);
@@ -62,7 +67,7 @@ public class CharactersManager : SingletonManager<CharactersManager>, IData
     }
 
 
-    void Initialized()
+    private void Initialized()
     {
         _AvatarFrameList = new List<AvatarFrame>();
         _AvatarFrameNoneList = new List<AvaterFrame_None>();
@@ -87,7 +92,7 @@ public class CharactersManager : SingletonManager<CharactersManager>, IData
         CharacterSelectManager.UpdateData();
     }
 
-    void LoadCharacters() // load toàn bộ data của user ra UI
+    private void LoadCharacters() // load toàn bộ data của user ra UI
     {
         if (gameObject == null || !gameObject.activeSelf || _ControllersList == null) return;
 
@@ -226,9 +231,10 @@ public class CharactersManager : SingletonManager<CharactersManager>, IData
 
 
     #region OnClick Button
-    void OnClickSortByLevelButton() => SortByLevel();
-    void OnClickSortByDamageButton() => SortByDamage();
-    void OnClickSortByRarityButton() => SortByRarity();
+
+    private void OnClickSortByLevelButton() => SortByLevel();
+    private void OnClickSortByDamageButton() => SortByDamage();
+    private void OnClickSortByRarityButton() => SortByRarity();
     #endregion
 
 

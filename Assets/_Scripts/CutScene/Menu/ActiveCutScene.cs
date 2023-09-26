@@ -3,10 +3,10 @@ using UnityEngine;
 public class ActiveCutScene : SingletonManager<ActiveCutScene>, IData
 {
     public GameObject panelCutScene;
-    bool isNewAccount = false;
+    private bool isNewAccount = false;
 
 
-    void OnEnable()
+    private void OnEnable()
     {
         DataReference.Register_IData(this);
     }

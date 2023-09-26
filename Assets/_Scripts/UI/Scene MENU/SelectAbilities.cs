@@ -28,11 +28,12 @@ public class SelectAbilities : MonoBehaviour
     int indexClickButton;
 
 
-    void Awake()
+    private void Awake()
     {
         poolBox = new ObjectPool<BoxSelectAbility>(boxSelectPrefab, contentSpawnBox, 0);
     }
-    void Start()
+
+    private void Start()
     {
         iconAbi1.enabled = false;
         iconAbi2.enabled = false;

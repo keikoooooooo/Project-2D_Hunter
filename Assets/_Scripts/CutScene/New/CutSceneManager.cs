@@ -12,13 +12,13 @@ public class CutSceneManager : SingletonManager<CutSceneManager>
     public GameObject Trigger1, Trigger2;
 
 
-    void Start()
+    private void Start()
     {
         enemy1.E_EnemyDie += SpawnEnemy2;
         _audio.Play();
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         enemy1.E_EnemyDie -= SpawnEnemy2;
     }
@@ -26,12 +26,12 @@ public class CutSceneManager : SingletonManager<CutSceneManager>
 
     public void SpawnEnemy2()
     {
-        Fx_Circle fx_Circle = SpawnVFX.Instance.Get_CircleFX(enemy2.transform.position);
+        var fx_Circle = SpawnVFX.Instance.Get_CircleFX(enemy2.transform.position);
         fx_Circle.E_EndCircleEffect += GetEnemy;
     }
 
 
-    void GetEnemy(Fx_Circle fx)
+    private void GetEnemy(Fx_Circle fx)
     {
         enemy2.gameObject.SetActive(true);
         fx.E_EndCircleEffect -= GetEnemy;

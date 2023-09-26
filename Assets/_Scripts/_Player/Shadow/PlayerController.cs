@@ -17,8 +17,8 @@ public partial class PlayerController : MonoBehaviour
     [SerializeField] protected Transform posAttack;
     [SerializeField] protected FillAttackColldown fillColldown;
 
-    Rigidbody2D rb;
-    Vector3 moveInput;
+    private Rigidbody2D rb;
+    private Vector3 moveInput;
 
 
     [Header("Variables")]
@@ -38,10 +38,10 @@ public partial class PlayerController : MonoBehaviour
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-    
     }
     protected virtual void Start() => Initialized();
-    void OnDestroy()
+
+    private void OnDestroy()
     {
         isPaused = false;
         PlayerAnimation.animationState.Complete -= CompleteAnimation;
@@ -51,8 +51,9 @@ public partial class PlayerController : MonoBehaviour
     #endregion
 
 
-    #region  -------------- Public Methods -------------- 
-    void Initialized() // Khởi tạo ??
+    #region  -------------- Public Methods --------------
+
+    private void Initialized() // Khởi tạo ??
     {
         Status.SetStats(stats_SO);
 
@@ -116,10 +117,10 @@ public partial class PlayerController : MonoBehaviour
     protected virtual void Die()
     {
         E_Die?.Invoke();
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
         isDie = true;
         fillColldown.StopColldown();
         PlayerAnimation.Dead();
-        Debug.Log("Player die");
     }
     public void Heal(int health) 
     {
@@ -149,7 +150,7 @@ public partial class PlayerController : MonoBehaviour
     protected void EndAnimationDead()
     {
         gameObject.SetActive(false);
-        Fx_Partical fxPlayerDie = SpawnVFX.Instance.Get_FXPlayerDie(transform.position);
+        var fxPlayerDie = SpawnVFX.Instance.Get_FXPlayerDie(transform.position);
         E_EndAnimationDie?.Invoke();
     }
 

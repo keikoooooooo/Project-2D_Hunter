@@ -3,28 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
-{  
-    BoxCollider2D boxCollider; // vị trí spawn -> nằm trong chiều dài và rộng của collider
+{
+    private BoxCollider2D boxCollider; // vị trí spawn -> nằm trong chiều dài và rộng của collider
 
-    [SerializeField] int maxCount;          // số lượng tối đa spawn
-    [SerializeField] float delaySpawn;      // thời gian chờ đợt spawn tiếp theo
-    [SerializeField] float radiusCheck;     // bán kính check va chạm 
-    [SerializeField] LayerMask layerMask;   // kiểm tra va chạm với layer nào ?
+    [SerializeField] private int maxCount;          // số lượng tối đa spawn
+    [SerializeField] private float delaySpawn;      // thời gian chờ đợt spawn tiếp theo
+    [SerializeField] private float radiusCheck;     // bán kính check va chạm 
+    [SerializeField] private LayerMask layerMask;   // kiểm tra va chạm với layer nào ?
     [Space]
 
-    [SerializeField] List<EnemyController> enemies;
-    ObjectPool<EnemyController> enemiesPool;
+    [SerializeField]
+    private List<EnemyController> enemies;
+
+    private ObjectPool<EnemyController> enemiesPool;
 
 
-    int countEnemy = 0; // số lượng enemy spawn ra
+    private int countEnemy = 0; // số lượng enemy spawn ra
 
 
     float posX, posY;
 
 
-    void Awake() => boxCollider = GetComponent<BoxCollider2D>();
+    private void Awake() => boxCollider = GetComponent<BoxCollider2D>();
 
-    void Start()
+    private void Start()
     {
         countEnemy = 0;
         enemiesPool = new ObjectPool<EnemyController>(enemies, transform, enemies.Count);
@@ -33,7 +35,7 @@ public class SpawnEnemy : MonoBehaviour
     }
 
 
-    IEnumerator SpawnCoroutine()
+    private IEnumerator SpawnCoroutine()
     {
         while (true)
         {
@@ -45,7 +47,7 @@ public class SpawnEnemy : MonoBehaviour
         }
     }
 
-    void Spawn()
+    private void Spawn()
     {
         posX = Random.Range(boxCollider.bounds.min.x, boxCollider.bounds.max.x);
         posY = Random.Range(boxCollider.bounds.min.y, boxCollider.bounds.max.y);
@@ -58,10 +60,10 @@ public class SpawnEnemy : MonoBehaviour
             Fx_Circle fx_Circle = SpawnVFX.Instance.Get_CircleFX(target);
             fx_Circle.E_EndCircleEffect += GetEnemy;
         }
-    }   
+    }
 
 
-    void GetEnemy(Fx_Circle fx_Circle)
+    private void GetEnemy(Fx_Circle fx_Circle)
     {
         EnemyController e = enemiesPool.Get();
         e.transform.position = fx_Circle.transform.position;
@@ -71,17 +73,11 @@ public class SpawnEnemy : MonoBehaviour
         fx_Circle.E_EndCircleEffect -= GetEnemy;
     }
 
-    void EnemyDie(EnemyController e)
+    private void EnemyDie(EnemyController e)
     {
         countEnemy--;
         e.E_EnemyDie -= EnemyDie;
     }
 
-
-    //void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireSphere(new Vector3(posX, posY, 0), radiusCheck);
-    //}
 
 }

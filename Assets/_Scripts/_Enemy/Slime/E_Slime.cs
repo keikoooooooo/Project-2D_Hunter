@@ -27,7 +27,8 @@ public class E_Slime : EnemyController
         base.E_AttackSkill -= OnSkill;
     
     }
-    void OnSkill()
+
+    private void OnSkill()
     {
         var hit = base.Raycast(posSkill);
         if (hit != null && hit.TryGetComponent<PlayerController>(out var player)) 

@@ -48,7 +48,8 @@ public class C_CorruptedKnight : PlayerController
         base.InputMove();
         InputAttack();
     }
-    void FixedUpdate() => base.Move(_isSpecialAttack || _isAttack);
+
+    private void FixedUpdate() => base.Move(_isSpecialAttack || _isAttack);
     #endregion
 
 
@@ -57,13 +58,15 @@ public class C_CorruptedKnight : PlayerController
     {
         poolSpecialSkill = new ObjectPool<ParticleSkills>(SpecialSkillPrefab, posSkillSpecial, 1);
     }
-    void InputAttack()
+
+    private void InputAttack()
     {
         AttackHold();
         AttackDrop();
         AttackNormal();
     }
-    void AttackHold()
+
+    private void AttackHold()
     {
         if (_isSpecialAttack || base.IsMoving()) return;
 
@@ -76,7 +79,8 @@ public class C_CorruptedKnight : PlayerController
             _isSpecialAttack = true;
         }
     }
-    void AttackDrop()
+
+    private void AttackDrop()
     {
         if (_trackEntry == null) return;
 
@@ -89,7 +93,8 @@ public class C_CorruptedKnight : PlayerController
             _skillCurrent.Action();
         }
     }
-    void AttackNormal()
+
+    private void AttackNormal()
     {
         if(_isAttack || base.IsMoving()) return;
 

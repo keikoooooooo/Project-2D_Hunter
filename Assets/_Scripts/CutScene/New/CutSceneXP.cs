@@ -12,13 +12,14 @@ public class CutSceneXP : MonoBehaviour
     [SerializeField] TextMeshProUGUI textLevel;
 
 
-    void Start()
+    private void Start()
     {
-        textLevel.text = $"{1}";
+        textLevel.text = "1";
 
         CutSceneManager.Instance.enemy1.E_EnemyDie += IncreaseXP;
     }
-    void OnDestroy()
+
+    private void OnDestroy()
     {
         if (CutSceneManager.Instance) 
             CutSceneManager.Instance.enemy1.E_EnemyDie -= IncreaseXP;
@@ -34,7 +35,7 @@ public class CutSceneXP : MonoBehaviour
             slider.minValue = 0;
             slider.maxValue = 20;
             slider.value = 0;
-            textLevel.text = $"{2}";
+            textLevel.text = "2";
         });
     }
 

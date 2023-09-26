@@ -10,10 +10,9 @@ public class C_Yeti : PlayerController
 
 
         base.InputMove();
-
-
     }
-    void FixedUpdate() => base.Move(false);
+
+    private void FixedUpdate() => base.Move(false);
     
 
 }

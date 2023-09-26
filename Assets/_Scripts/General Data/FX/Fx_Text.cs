@@ -11,14 +11,14 @@ public enum TextHandler
 }
 public class Fx_Text : MonoBehaviour, IPool<Fx_Text>
 {
-    [SerializeField] Animator animator;
-    [SerializeField] TextMeshProUGUI textHandler;
-    Action<Fx_Text> action;
+    [SerializeField] private Animator animator;
+    [SerializeField] private TextMeshProUGUI textHandler;
+    private Action<Fx_Text> action;
 
-    int codeAnimHealDamage = Animator.StringToHash("Damage_HealText");
-    int codeAnimXp = Animator.StringToHash("XpText");
+    private readonly int codeAnimHealDamage = Animator.StringToHash("Damage_HealText");
+    private readonly int codeAnimXp = Animator.StringToHash("XpText");
 
-    float timerAnimation;
+    private float timerAnimation;
 
     public void Init(Action<Fx_Text> returnAction) => action = returnAction;
     
@@ -67,7 +67,7 @@ public class Fx_Text : MonoBehaviour, IPool<Fx_Text>
     }
 
 
-    IEnumerator Action()
+    private IEnumerator Action()
     {
         yield return new WaitForSeconds(timerAnimation);    
         textHandler.color = Color.white;

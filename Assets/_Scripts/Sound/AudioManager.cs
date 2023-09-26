@@ -7,16 +7,16 @@ public class AudioManager : SingletonManager<AudioManager>
     public AudioSource SFXSource;
 
     [Header("----------- Audio Clip -----------")]
-    [SerializeField] AudioClip Menu;
-    [SerializeField] AudioClip Gameplay;
-    [SerializeField] AudioClip OnClick;
-    [SerializeField] AudioClip BackOnClick;
-    [SerializeField] AudioClip Defeat;
-    [SerializeField] AudioClip Victory;
-    [SerializeField] AudioClip Reward;
-    [SerializeField] AudioClip Upgrade;
-    [SerializeField] AudioClip Error;
-    [SerializeField] AudioClip Collect;
+    [SerializeField] private AudioClip Menu;
+    [SerializeField] private AudioClip Gameplay;
+    [SerializeField] private AudioClip OnClick;
+    [SerializeField] private AudioClip BackOnClick;
+    [SerializeField] private AudioClip Defeat;
+    [SerializeField] private AudioClip Victory;
+    [SerializeField] private AudioClip Reward;
+    [SerializeField] private AudioClip Upgrade;
+    [SerializeField] private AudioClip Error;
+    [SerializeField] private AudioClip Collect;
 
     public void Play(AudioName audioName)
     {
